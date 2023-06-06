@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Editar_Usuario
+Partial Class frm_editar_usuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -59,7 +59,7 @@ Partial Class Editar_Usuario
         Me.btn_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btn_guardar.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_guardar.ForeColor = System.Drawing.Color.White
-        Me.btn_guardar.Location = New System.Drawing.Point(418, 194)
+        Me.btn_guardar.Location = New System.Drawing.Point(418, 203)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(182, 39)
         Me.btn_guardar.TabIndex = 10
@@ -206,7 +206,7 @@ Partial Class Editar_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(849, 388)
+        Me.ClientSize = New System.Drawing.Size(853, 349)
         Me.Controls.Add(Me.gp_validaciones)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)

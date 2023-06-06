@@ -179,22 +179,22 @@
     <Compile Include="PantallaPrincipal\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Agregar_Usuario.Designer.vb">
-      <DependentUpon>Agregar_Usuario.vb</DependentUpon>
+    <Compile Include="Usuarios\frm_agregar_usuario.Designer.vb">
+      <DependentUpon>frm_agregar_usuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Agregar_Usuario.vb">
+    <Compile Include="Usuarios\frm_agregar_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Editar_Usuario.Designer.vb">
-      <DependentUpon>Editar_Usuario.vb</DependentUpon>
+    <Compile Include="Usuarios\frm_editar_usuario.Designer.vb">
+      <DependentUpon>frm_editar_usuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Editar_Usuario.vb">
+    <Compile Include="Usuarios\frm_editar_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Usuarios.Designer.vb">
-      <DependentUpon>Usuarios.vb</DependentUpon>
+    <Compile Include="Usuarios\frm_usuarios.Designer.vb">
+      <DependentUpon>frm_usuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Usuarios.vb">
+    <Compile Include="Usuarios\frm_usuarios.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -250,11 +250,14 @@
     <EmbeddedResource Include="PantallaPrincipal\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Agregar_Usuario.resx">
-      <DependentUpon>Agregar_Usuario.vb</DependentUpon>
+    <EmbeddedResource Include="Usuarios\frm_agregar_usuario.resx">
+      <DependentUpon>frm_agregar_usuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Usuarios.resx">
-      <DependentUpon>Usuarios.vb</DependentUpon>
+    <EmbeddedResource Include="Usuarios\frm_editar_usuario.resx">
+      <DependentUpon>frm_editar_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\frm_usuarios.resx">
+      <DependentUpon>frm_usuarios.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

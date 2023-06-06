@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub btnusuarios_Click(sender As Object, e As EventArgs) Handles btnusuarios.Click
-        Dim Usuarios As New Usuarios() ' Reemplaza "Form2" con el nombre de tu formulario
+        Dim Usuarios As New frm_usuarios() ' Reemplaza "Form2" con el nombre de tu formulario
         Usuarios.Show()
     End Sub
 End Class
