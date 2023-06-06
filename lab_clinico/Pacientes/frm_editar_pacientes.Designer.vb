@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Editar_Paciente
+Partial Class frm_editar_pacientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class Editar_Paciente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Editar_Paciente))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_editar_pacientes))
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -236,7 +236,7 @@ Partial Class Editar_Paciente
         Me.iconButton2.Text = "Cancelar"
         Me.iconButton2.UseVisualStyleBackColor = False
         '
-        'Editar_Paciente
+        'frm_editar_pacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -258,7 +258,7 @@ Partial Class Editar_Paciente
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.pnlTitulo)
-        Me.Name = "Editar_Paciente"
+        Me.Name = "frm_editar_pacientes"
         Me.Text = "Editar_Paciente"
         Me.pnlTitulo.ResumeLayout(False)
         Me.pnlTitulo.PerformLayout()

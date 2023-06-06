@@ -66,7 +66,7 @@ Partial Class Agregar_Usuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label1.Location = New System.Drawing.Point(52, 39)
+        Me.Label1.Location = New System.Drawing.Point(48, 34)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(158, 21)
         Me.Label1.TabIndex = 4
@@ -76,7 +76,7 @@ Partial Class Agregar_Usuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label2.Location = New System.Drawing.Point(301, 39)
+        Me.Label2.Location = New System.Drawing.Point(301, 34)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 21)
         Me.Label2.TabIndex = 5
@@ -86,7 +86,7 @@ Partial Class Agregar_Usuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label3.Location = New System.Drawing.Point(52, 123)
+        Me.Label3.Location = New System.Drawing.Point(48, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(154, 21)
         Me.Label3.TabIndex = 6
@@ -96,7 +96,7 @@ Partial Class Agregar_Usuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(301, 123)
+        Me.Label4.Location = New System.Drawing.Point(301, 115)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(184, 21)
         Me.Label4.TabIndex = 7

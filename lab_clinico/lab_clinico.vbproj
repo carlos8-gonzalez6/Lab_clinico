@@ -73,10 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CatalogoExamenes\catalogo.Designer.vb">
-      <DependentUpon>catalogo.vb</DependentUpon>
+    <Compile Include="CatalogoExamenes\frm_catalogo.Designer.vb">
+      <DependentUpon>frm_catalogo.vb</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoExamenes\catalogo.vb">
+    <Compile Include="CatalogoExamenes\frm_catalogo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CatalogoExamenes\categoria.Designer.vb">
@@ -154,22 +154,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pacientes\Editar Paciente.Designer.vb">
-      <DependentUpon>Editar Paciente.vb</DependentUpon>
+    <Compile Include="Pacientes\frm_editar_pacientes.Designer.vb">
+      <DependentUpon>frm_editar_pacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\Editar Paciente.vb">
+    <Compile Include="Pacientes\frm_editar_pacientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes\Nuevo Paciente.Designer.vb">
-      <DependentUpon>Nuevo Paciente.vb</DependentUpon>
+    <Compile Include="Pacientes\frm_nuevo_pacientes.Designer.vb">
+      <DependentUpon>frm_nuevo_pacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\Nuevo Paciente.vb">
+    <Compile Include="Pacientes\frm_nuevo_pacientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes\Pacientes.Designer.vb">
-      <DependentUpon>Pacientes.vb</DependentUpon>
+    <Compile Include="Pacientes\frm_pacientes.Designer.vb">
+      <DependentUpon>frm_pacientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\Pacientes.vb">
+    <Compile Include="Pacientes\frm_pacientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PantallaPrincipal\Form1.Designer.vb">
@@ -198,8 +198,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CatalogoExamenes\catalogo.resx">
-      <DependentUpon>catalogo.vb</DependentUpon>
+    <EmbeddedResource Include="CatalogoExamenes\frm_catalogo.resx">
+      <DependentUpon>frm_catalogo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CatalogoExamenes\categoria.resx">
       <DependentUpon>categoria.vb</DependentUpon>
@@ -237,17 +237,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\Editar Paciente.resx">
-      <DependentUpon>Editar Paciente.vb</DependentUpon>
+    <EmbeddedResource Include="Pacientes\frm_editar_pacientes.resx">
+      <DependentUpon>frm_editar_pacientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\Nuevo Paciente.resx">
-      <DependentUpon>Nuevo Paciente.vb</DependentUpon>
+    <EmbeddedResource Include="Pacientes\frm_nuevo_pacientes.resx">
+      <DependentUpon>frm_nuevo_pacientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\Pacientes.resx">
-      <DependentUpon>Pacientes.vb</DependentUpon>
+    <EmbeddedResource Include="Pacientes\frm_pacientes.resx">
+      <DependentUpon>frm_pacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Agregar_Usuario.resx">
+      <DependentUpon>Agregar_Usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
