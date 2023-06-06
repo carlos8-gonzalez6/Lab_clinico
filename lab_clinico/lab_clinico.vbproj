@@ -109,6 +109,7 @@
     <Compile Include="CatalogoExamenes\nuevoExamen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Conexion.vb" />
     <Compile Include="Empleados\editar_empleado.Designer.vb">
       <DependentUpon>editar_empleado.vb</DependentUpon>
     </Compile>
