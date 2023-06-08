@@ -22,6 +22,7 @@ Partial Class frm_editar_usuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_editar_usuario))
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_guardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -39,7 +40,11 @@ Partial Class frm_editar_usuario
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.pnlTitulo = New System.Windows.Forms.Panel()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.gp_validaciones.SuspendLayout()
+        Me.pnlTitulo.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_cancelar
@@ -47,7 +52,7 @@ Partial Class frm_editar_usuario
         Me.btn_cancelar.BackColor = System.Drawing.Color.Red
         Me.btn_cancelar.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_cancelar.ForeColor = System.Drawing.Color.White
-        Me.btn_cancelar.Location = New System.Drawing.Point(418, 261)
+        Me.btn_cancelar.Location = New System.Drawing.Point(412, 281)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(179, 39)
         Me.btn_cancelar.TabIndex = 11
@@ -59,7 +64,7 @@ Partial Class frm_editar_usuario
         Me.btn_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btn_guardar.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_guardar.ForeColor = System.Drawing.Color.White
-        Me.btn_guardar.Location = New System.Drawing.Point(418, 203)
+        Me.btn_guardar.Location = New System.Drawing.Point(412, 223)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(182, 39)
         Me.btn_guardar.TabIndex = 10
@@ -70,7 +75,7 @@ Partial Class frm_editar_usuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(32, 31)
+        Me.Label1.Location = New System.Drawing.Point(26, 51)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(158, 21)
         Me.Label1.TabIndex = 13
@@ -78,7 +83,7 @@ Partial Class frm_editar_usuario
         '
         'txt_nombre_usuario
         '
-        Me.txt_nombre_usuario.Location = New System.Drawing.Point(32, 50)
+        Me.txt_nombre_usuario.Location = New System.Drawing.Point(26, 70)
         Me.txt_nombre_usuario.Name = "txt_nombre_usuario"
         Me.txt_nombre_usuario.Size = New System.Drawing.Size(182, 20)
         Me.txt_nombre_usuario.TabIndex = 12
@@ -87,7 +92,7 @@ Partial Class frm_editar_usuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label2.Location = New System.Drawing.Point(32, 92)
+        Me.Label2.Location = New System.Drawing.Point(26, 112)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(154, 21)
         Me.Label2.TabIndex = 15
@@ -95,7 +100,7 @@ Partial Class frm_editar_usuario
         '
         'txt_correo
         '
-        Me.txt_correo.Location = New System.Drawing.Point(32, 111)
+        Me.txt_correo.Location = New System.Drawing.Point(26, 131)
         Me.txt_correo.Name = "txt_correo"
         Me.txt_correo.Size = New System.Drawing.Size(182, 20)
         Me.txt_correo.TabIndex = 14
@@ -104,7 +109,7 @@ Partial Class frm_editar_usuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label3.Location = New System.Drawing.Point(32, 150)
+        Me.Label3.Location = New System.Drawing.Point(26, 170)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 21)
         Me.Label3.TabIndex = 17
@@ -112,7 +117,7 @@ Partial Class frm_editar_usuario
         '
         'txt_dni
         '
-        Me.txt_dni.Location = New System.Drawing.Point(32, 169)
+        Me.txt_dni.Location = New System.Drawing.Point(26, 189)
         Me.txt_dni.Name = "txt_dni"
         Me.txt_dni.Size = New System.Drawing.Size(182, 20)
         Me.txt_dni.TabIndex = 16
@@ -121,7 +126,7 @@ Partial Class frm_editar_usuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(29, 279)
+        Me.Label4.Location = New System.Drawing.Point(23, 299)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(184, 21)
         Me.Label4.TabIndex = 21
@@ -131,7 +136,7 @@ Partial Class frm_editar_usuario
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label5.Location = New System.Drawing.Point(29, 212)
+        Me.Label5.Location = New System.Drawing.Point(23, 232)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 21)
         Me.Label5.TabIndex = 20
@@ -139,14 +144,14 @@ Partial Class frm_editar_usuario
         '
         'txt_contraseña
         '
-        Me.txt_contraseña.Location = New System.Drawing.Point(32, 231)
+        Me.txt_contraseña.Location = New System.Drawing.Point(26, 251)
         Me.txt_contraseña.Name = "txt_contraseña"
         Me.txt_contraseña.Size = New System.Drawing.Size(182, 20)
         Me.txt_contraseña.TabIndex = 19
         '
         'txt_confirmar
         '
-        Me.txt_confirmar.Location = New System.Drawing.Point(32, 295)
+        Me.txt_confirmar.Location = New System.Drawing.Point(26, 315)
         Me.txt_confirmar.Name = "txt_confirmar"
         Me.txt_confirmar.Size = New System.Drawing.Size(182, 20)
         Me.txt_confirmar.TabIndex = 18
@@ -158,7 +163,7 @@ Partial Class frm_editar_usuario
         Me.gp_validaciones.Controls.Add(Me.Label8)
         Me.gp_validaciones.Controls.Add(Me.Label9)
         Me.gp_validaciones.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.gp_validaciones.Location = New System.Drawing.Point(390, 36)
+        Me.gp_validaciones.Location = New System.Drawing.Point(384, 56)
         Me.gp_validaciones.Name = "gp_validaciones"
         Me.gp_validaciones.Size = New System.Drawing.Size(425, 152)
         Me.gp_validaciones.TabIndex = 22
@@ -202,11 +207,44 @@ Partial Class frm_editar_usuario
         Me.Label9.TabIndex = 26
         Me.Label9.Text = "La Contraseña debe contener al menos 8 caracteres"
         '
-        'Editar_Usuario
+        'pnlTitulo
+        '
+        Me.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.pnlTitulo.Controls.Add(Me.btn_cerrar)
+        Me.pnlTitulo.Controls.Add(Me.Label10)
+        Me.pnlTitulo.Location = New System.Drawing.Point(0, -1)
+        Me.pnlTitulo.Name = "pnlTitulo"
+        Me.pnlTitulo.Size = New System.Drawing.Size(857, 39)
+        Me.pnlTitulo.TabIndex = 23
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cerrar.Image = CType(resources.GetObject("btn_cerrar.Image"), System.Drawing.Image)
+        Me.btn_cerrar.Location = New System.Drawing.Point(3, 3)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_cerrar.TabIndex = 1
+        Me.btn_cerrar.UseVisualStyleBackColor = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 15.75!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(39, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(142, 24)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Editar Usuario"
+        '
+        'frm_editar_usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(853, 349)
+        Me.Controls.Add(Me.pnlTitulo)
         Me.Controls.Add(Me.gp_validaciones)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
@@ -220,10 +258,12 @@ Partial Class frm_editar_usuario
         Me.Controls.Add(Me.txt_nombre_usuario)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_guardar)
-        Me.Name = "Editar_Usuario"
+        Me.Name = "frm_editar_usuario"
         Me.Text = "Editar_Usuario"
         Me.gp_validaciones.ResumeLayout(False)
         Me.gp_validaciones.PerformLayout()
+        Me.pnlTitulo.ResumeLayout(False)
+        Me.pnlTitulo.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -246,4 +286,7 @@ Partial Class frm_editar_usuario
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents pnlTitulo As Panel
+    Friend WithEvents btn_cerrar As Button
+    Private WithEvents Label10 As Label
 End Class
