@@ -45,8 +45,10 @@ Partial Class frm_usuarios
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gb_usuarios = New System.Windows.Forms.GroupBox()
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_usuarios.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_agregar_usuarios
@@ -122,7 +124,7 @@ Partial Class frm_usuarios
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(715, 251)
+        Me.Label4.Location = New System.Drawing.Point(284, 177)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(184, 21)
         Me.Label4.TabIndex = 53
@@ -132,7 +134,7 @@ Partial Class frm_usuarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label3.Location = New System.Drawing.Point(714, 94)
+        Me.Label3.Location = New System.Drawing.Point(283, 33)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(154, 21)
         Me.Label3.TabIndex = 52
@@ -142,7 +144,7 @@ Partial Class frm_usuarios
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label2.Location = New System.Drawing.Point(463, 251)
+        Me.Label2.Location = New System.Drawing.Point(32, 177)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 21)
         Me.Label2.TabIndex = 51
@@ -152,7 +154,7 @@ Partial Class frm_usuarios
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label1.Location = New System.Drawing.Point(457, 94)
+        Me.Label1.Location = New System.Drawing.Point(26, 33)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(158, 21)
         Me.Label1.TabIndex = 50
@@ -160,37 +162,37 @@ Partial Class frm_usuarios
         '
         'txt_contraseña
         '
-        Me.txt_contraseña.Location = New System.Drawing.Point(466, 275)
+        Me.txt_contraseña.Location = New System.Drawing.Point(35, 201)
         Me.txt_contraseña.Name = "txt_contraseña"
-        Me.txt_contraseña.Size = New System.Drawing.Size(226, 20)
+        Me.txt_contraseña.Size = New System.Drawing.Size(213, 27)
         Me.txt_contraseña.TabIndex = 49
         '
         'txt_confirmar
         '
-        Me.txt_confirmar.Location = New System.Drawing.Point(718, 275)
+        Me.txt_confirmar.Location = New System.Drawing.Point(287, 201)
         Me.txt_confirmar.Name = "txt_confirmar"
-        Me.txt_confirmar.Size = New System.Drawing.Size(230, 20)
+        Me.txt_confirmar.Size = New System.Drawing.Size(217, 27)
         Me.txt_confirmar.TabIndex = 48
         '
         'txt_correo
         '
-        Me.txt_correo.Location = New System.Drawing.Point(718, 118)
+        Me.txt_correo.Location = New System.Drawing.Point(287, 57)
         Me.txt_correo.Name = "txt_correo"
-        Me.txt_correo.Size = New System.Drawing.Size(230, 20)
+        Me.txt_correo.Size = New System.Drawing.Size(217, 27)
         Me.txt_correo.TabIndex = 47
         '
         'txt_nombre_usuario
         '
-        Me.txt_nombre_usuario.Location = New System.Drawing.Point(461, 118)
+        Me.txt_nombre_usuario.Location = New System.Drawing.Point(30, 57)
         Me.txt_nombre_usuario.Name = "txt_nombre_usuario"
-        Me.txt_nombre_usuario.Size = New System.Drawing.Size(231, 20)
+        Me.txt_nombre_usuario.Size = New System.Drawing.Size(218, 27)
         Me.txt_nombre_usuario.TabIndex = 46
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Label6.Location = New System.Drawing.Point(462, 174)
+        Me.Label6.Location = New System.Drawing.Point(31, 100)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 21)
         Me.Label6.TabIndex = 55
@@ -198,9 +200,9 @@ Partial Class frm_usuarios
         '
         'txt_dni
         '
-        Me.txt_dni.Location = New System.Drawing.Point(462, 193)
+        Me.txt_dni.Location = New System.Drawing.Point(31, 119)
         Me.txt_dni.Name = "txt_dni"
-        Me.txt_dni.Size = New System.Drawing.Size(230, 20)
+        Me.txt_dni.Size = New System.Drawing.Size(217, 27)
         Me.txt_dni.TabIndex = 54
         '
         'dg_facturacion
@@ -262,23 +264,36 @@ Partial Class frm_usuarios
         Me.Column4.ReadOnly = True
         Me.Column4.Width = 66
         '
+        'gb_usuarios
+        '
+        Me.gb_usuarios.BackColor = System.Drawing.Color.White
+        Me.gb_usuarios.Controls.Add(Me.txt_contraseña)
+        Me.gb_usuarios.Controls.Add(Me.txt_nombre_usuario)
+        Me.gb_usuarios.Controls.Add(Me.Label6)
+        Me.gb_usuarios.Controls.Add(Me.txt_correo)
+        Me.gb_usuarios.Controls.Add(Me.txt_dni)
+        Me.gb_usuarios.Controls.Add(Me.txt_confirmar)
+        Me.gb_usuarios.Controls.Add(Me.Label4)
+        Me.gb_usuarios.Controls.Add(Me.Label1)
+        Me.gb_usuarios.Controls.Add(Me.Label3)
+        Me.gb_usuarios.Controls.Add(Me.Label2)
+        Me.gb_usuarios.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_usuarios.ForeColor = System.Drawing.Color.Black
+        Me.gb_usuarios.Location = New System.Drawing.Point(444, 86)
+        Me.gb_usuarios.Name = "gb_usuarios"
+        Me.gb_usuarios.Size = New System.Drawing.Size(512, 239)
+        Me.gb_usuarios.TabIndex = 57
+        Me.gb_usuarios.TabStop = False
+        Me.gb_usuarios.Text = "Datos de Usuario"
+        '
         'frm_usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(960, 571)
+        Me.Controls.Add(Me.gb_usuarios)
         Me.Controls.Add(Me.dg_facturacion)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txt_dni)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txt_contraseña)
-        Me.Controls.Add(Me.txt_confirmar)
-        Me.Controls.Add(Me.txt_correo)
-        Me.Controls.Add(Me.txt_nombre_usuario)
         Me.Controls.Add(Me.pnlTitulo)
         Me.Controls.Add(Me.txt_buscar_usuario)
         Me.Controls.Add(Me.btn_editar_usuarios)
@@ -288,6 +303,8 @@ Partial Class frm_usuarios
         Me.pnlTitulo.ResumeLayout(False)
         Me.pnlTitulo.PerformLayout()
         CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_usuarios.ResumeLayout(False)
+        Me.gb_usuarios.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -313,4 +330,5 @@ Partial Class frm_usuarios
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents gb_usuarios As GroupBox
 End Class
