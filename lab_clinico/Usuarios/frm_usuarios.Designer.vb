@@ -23,7 +23,7 @@ Partial Class frm_usuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_usuarios))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_agregar_usuarios = New System.Windows.Forms.Button()
         Me.btn_editar_usuarios = New System.Windows.Forms.Button()
         Me.txt_buscar_usuario = New System.Windows.Forms.TextBox()
@@ -46,9 +46,15 @@ Partial Class frm_usuarios
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gb_usuarios = New System.Windows.Forms.GroupBox()
+        Me.gb_validaciones = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_usuarios.SuspendLayout()
+        Me.gb_validaciones.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_agregar_usuarios
@@ -56,7 +62,7 @@ Partial Class frm_usuarios
         Me.btn_agregar_usuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.btn_agregar_usuarios.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_agregar_usuarios.ForeColor = System.Drawing.Color.White
-        Me.btn_agregar_usuarios.Location = New System.Drawing.Point(459, 380)
+        Me.btn_agregar_usuarios.Location = New System.Drawing.Point(462, 513)
         Me.btn_agregar_usuarios.Name = "btn_agregar_usuarios"
         Me.btn_agregar_usuarios.Size = New System.Drawing.Size(211, 46)
         Me.btn_agregar_usuarios.TabIndex = 2
@@ -68,7 +74,7 @@ Partial Class frm_usuarios
         Me.btn_editar_usuarios.BackColor = System.Drawing.Color.OrangeRed
         Me.btn_editar_usuarios.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_editar_usuarios.ForeColor = System.Drawing.Color.White
-        Me.btn_editar_usuarios.Location = New System.Drawing.Point(718, 380)
+        Me.btn_editar_usuarios.Location = New System.Drawing.Point(715, 513)
         Me.btn_editar_usuarios.Name = "btn_editar_usuarios"
         Me.btn_editar_usuarios.Size = New System.Drawing.Size(211, 46)
         Me.btn_editar_usuarios.TabIndex = 3
@@ -216,14 +222,14 @@ Partial Class frm_usuarios
         Me.dg_facturacion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_facturacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dg_facturacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_facturacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_facturacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dg_facturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dg_facturacion.EnableHeadersVisualStyles = False
@@ -286,12 +292,70 @@ Partial Class frm_usuarios
         Me.gb_usuarios.TabStop = False
         Me.gb_usuarios.Text = "Datos de Usuario"
         '
+        'gb_validaciones
+        '
+        Me.gb_validaciones.BackColor = System.Drawing.Color.White
+        Me.gb_validaciones.Controls.Add(Me.Label7)
+        Me.gb_validaciones.Controls.Add(Me.Label9)
+        Me.gb_validaciones.Controls.Add(Me.Label10)
+        Me.gb_validaciones.Controls.Add(Me.Label11)
+        Me.gb_validaciones.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_validaciones.ForeColor = System.Drawing.Color.Black
+        Me.gb_validaciones.Location = New System.Drawing.Point(444, 342)
+        Me.gb_validaciones.Name = "gb_validaciones"
+        Me.gb_validaciones.Size = New System.Drawing.Size(512, 152)
+        Me.gb_validaciones.TabIndex = 58
+        Me.gb_validaciones.TabStop = False
+        Me.gb_validaciones.Text = "Validaciones"
+        Me.gb_validaciones.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.Label7.Location = New System.Drawing.Point(26, 98)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(145, 21)
+        Me.Label7.TabIndex = 55
+        Me.Label7.Text = "1 Letra minuscula"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.Label9.Location = New System.Drawing.Point(26, 66)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(151, 21)
+        Me.Label9.TabIndex = 50
+        Me.Label9.Text = "1 Letra mayuscula"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.Label10.Location = New System.Drawing.Point(26, 35)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(419, 21)
+        Me.Label10.TabIndex = 52
+        Me.Label10.Text = "La contraseña debe contener al menos 8 caracteres"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.Label11.Location = New System.Drawing.Point(26, 128)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(243, 21)
+        Me.Label11.TabIndex = 51
+        Me.Label11.Text = "1 Caracter Especial (@, ., etc.)"
+        '
         'frm_usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(960, 571)
+        Me.Controls.Add(Me.gb_validaciones)
         Me.Controls.Add(Me.gb_usuarios)
         Me.Controls.Add(Me.dg_facturacion)
         Me.Controls.Add(Me.pnlTitulo)
@@ -305,6 +369,8 @@ Partial Class frm_usuarios
         CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_usuarios.ResumeLayout(False)
         Me.gb_usuarios.PerformLayout()
+        Me.gb_validaciones.ResumeLayout(False)
+        Me.gb_validaciones.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -331,4 +397,9 @@ Partial Class frm_usuarios
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents gb_usuarios As GroupBox
+    Friend WithEvents gb_validaciones As GroupBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
 End Class
