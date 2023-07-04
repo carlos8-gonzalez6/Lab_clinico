@@ -180,12 +180,11 @@ Partial Class frm_pacientes
         Me.gb_Pacientes.Font = New System.Drawing.Font("Century Gothic", 15.75!)
         Me.gb_Pacientes.Location = New System.Drawing.Point(444, 82)
         Me.gb_Pacientes.Name = "gb_Pacientes"
-        Me.gb_Pacientes.Size = New System.Drawing.Size(504, 312)
+        Me.gb_Pacientes.Size = New System.Drawing.Size(504, 303)
         Me.gb_Pacientes.TabIndex = 59
         Me.gb_Pacientes.TabStop = False
         Me.gb_Pacientes.Text = "Datos Personales"
         Me.gb_Pacientes.UseWaitCursor = True
-        Me.gb_Pacientes.Visible = False
         '
         'DtpFechaNac
         '
