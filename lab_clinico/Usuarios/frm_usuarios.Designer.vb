@@ -23,7 +23,7 @@ Partial Class frm_usuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_usuarios))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_agregar_usuarios = New System.Windows.Forms.Button()
         Me.btn_editar_usuarios = New System.Windows.Forms.Button()
         Me.txt_buscar_usuario = New System.Windows.Forms.TextBox()
@@ -40,7 +40,7 @@ Partial Class frm_usuarios
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_dni = New System.Windows.Forms.TextBox()
-        Me.dg_facturacion = New System.Windows.Forms.DataGridView()
+        Me.dg_usuarios = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,7 +52,7 @@ Partial Class frm_usuarios
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.pnlTitulo.SuspendLayout()
-        CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_usuarios.SuspendLayout()
         Me.gb_validaciones.SuspendLayout()
         Me.SuspendLayout()
@@ -211,36 +211,36 @@ Partial Class frm_usuarios
         Me.txt_dni.Size = New System.Drawing.Size(217, 27)
         Me.txt_dni.TabIndex = 54
         '
-        'dg_facturacion
+        'dg_usuarios
         '
-        Me.dg_facturacion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dg_usuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dg_facturacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dg_facturacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dg_facturacion.BackgroundColor = System.Drawing.Color.White
-        Me.dg_facturacion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dg_facturacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dg_facturacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_facturacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dg_facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dg_facturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.dg_facturacion.EnableHeadersVisualStyles = False
-        Me.dg_facturacion.GridColor = System.Drawing.Color.SteelBlue
-        Me.dg_facturacion.Location = New System.Drawing.Point(12, 86)
-        Me.dg_facturacion.Name = "dg_facturacion"
-        Me.dg_facturacion.ReadOnly = True
-        Me.dg_facturacion.RowHeadersVisible = False
-        Me.dg_facturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_facturacion.Size = New System.Drawing.Size(426, 473)
-        Me.dg_facturacion.TabIndex = 56
+        Me.dg_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dg_usuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dg_usuarios.BackgroundColor = System.Drawing.Color.White
+        Me.dg_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dg_usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dg_usuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_usuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dg_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dg_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.dg_usuarios.EnableHeadersVisualStyles = False
+        Me.dg_usuarios.GridColor = System.Drawing.Color.SteelBlue
+        Me.dg_usuarios.Location = New System.Drawing.Point(12, 86)
+        Me.dg_usuarios.Name = "dg_usuarios"
+        Me.dg_usuarios.ReadOnly = True
+        Me.dg_usuarios.RowHeadersVisible = False
+        Me.dg_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg_usuarios.Size = New System.Drawing.Size(426, 473)
+        Me.dg_usuarios.TabIndex = 56
         '
         'Column1
         '
@@ -357,7 +357,7 @@ Partial Class frm_usuarios
         Me.ClientSize = New System.Drawing.Size(960, 571)
         Me.Controls.Add(Me.gb_validaciones)
         Me.Controls.Add(Me.gb_usuarios)
-        Me.Controls.Add(Me.dg_facturacion)
+        Me.Controls.Add(Me.dg_usuarios)
         Me.Controls.Add(Me.pnlTitulo)
         Me.Controls.Add(Me.txt_buscar_usuario)
         Me.Controls.Add(Me.btn_editar_usuarios)
@@ -366,7 +366,7 @@ Partial Class frm_usuarios
         Me.Text = "Usuarios"
         Me.pnlTitulo.ResumeLayout(False)
         Me.pnlTitulo.PerformLayout()
-        CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_usuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_usuarios.ResumeLayout(False)
         Me.gb_usuarios.PerformLayout()
         Me.gb_validaciones.ResumeLayout(False)
@@ -391,7 +391,7 @@ Partial Class frm_usuarios
     Friend WithEvents txt_nombre_usuario As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_dni As TextBox
-    Private WithEvents dg_facturacion As DataGridView
+    Private WithEvents dg_usuarios As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
