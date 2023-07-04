@@ -362,4 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-Conexion.vb
+lab_clinico/lab_clinico/Conexion.vb
