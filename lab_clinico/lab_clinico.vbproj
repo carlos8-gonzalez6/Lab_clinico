@@ -110,22 +110,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
-    <Compile Include="Empleados\editar_empleado.Designer.vb">
-      <DependentUpon>editar_empleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\editar_empleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleados\Empleados.Designer.vb">
       <DependentUpon>Empleados.vb</DependentUpon>
     </Compile>
     <Compile Include="Empleados\Empleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empleados\nuevo_empleado.Designer.vb">
-      <DependentUpon>nuevo_empleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\nuevo_empleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Facturacion\frm_facturacion.Designer.vb">
@@ -193,14 +181,8 @@
     <EmbeddedResource Include="CatalogoExamenes\nuevoExamen.resx">
       <DependentUpon>nuevoExamen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\editar_empleado.resx">
-      <DependentUpon>editar_empleado.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Empleados\Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\nuevo_empleado.resx">
-      <DependentUpon>nuevo_empleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_facturacion.resx">
       <DependentUpon>frm_facturacion.vb</DependentUpon>
