@@ -110,34 +110,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
-    <Compile Include="Empleados\editar_empleado.Designer.vb">
-      <DependentUpon>editar_empleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\editar_empleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleados\Empleados.Designer.vb">
       <DependentUpon>Empleados.vb</DependentUpon>
     </Compile>
     <Compile Include="Empleados\Empleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados\nuevo_empleado.Designer.vb">
-      <DependentUpon>nuevo_empleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\nuevo_empleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Facturacion\frm_facturacion.Designer.vb">
       <DependentUpon>frm_facturacion.vb</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\frm_facturacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Facturacion\frm_nueva_factura.Designer.vb">
-      <DependentUpon>frm_nueva_factura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Facturacion\frm_nueva_factura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -155,18 +137,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pacientes\frm_editar_pacientes.Designer.vb">
-      <DependentUpon>frm_editar_pacientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Pacientes\frm_editar_pacientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pacientes\frm_nuevo_pacientes.Designer.vb">
-      <DependentUpon>frm_nuevo_pacientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Pacientes\frm_nuevo_pacientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Pacientes\frm_pacientes.Designer.vb">
       <DependentUpon>frm_pacientes.vb</DependentUpon>
     </Compile>
@@ -177,18 +147,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
     <Compile Include="PantallaPrincipal\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\frm_agregar_usuario.Designer.vb">
-      <DependentUpon>frm_agregar_usuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\frm_agregar_usuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\frm_editar_usuario.Designer.vb">
-      <DependentUpon>frm_editar_usuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\frm_editar_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios\frm_usuarios.Designer.vb">
@@ -217,20 +175,11 @@
     <EmbeddedResource Include="CatalogoExamenes\nuevoExamen.resx">
       <DependentUpon>nuevoExamen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\editar_empleado.resx">
-      <DependentUpon>editar_empleado.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Empleados\Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\nuevo_empleado.resx">
-      <DependentUpon>nuevo_empleado.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_facturacion.resx">
       <DependentUpon>frm_facturacion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\frm_nueva_factura.resx">
-      <DependentUpon>frm_nueva_factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -238,23 +187,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\frm_editar_pacientes.resx">
-      <DependentUpon>frm_editar_pacientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\frm_nuevo_pacientes.resx">
-      <DependentUpon>frm_nuevo_pacientes.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pacientes\frm_pacientes.resx">
       <DependentUpon>frm_pacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\frm_agregar_usuario.resx">
-      <DependentUpon>frm_agregar_usuario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\frm_editar_usuario.resx">
-      <DependentUpon>frm_editar_usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\frm_usuarios.resx">
       <DependentUpon>frm_usuarios.vb</DependentUpon>
