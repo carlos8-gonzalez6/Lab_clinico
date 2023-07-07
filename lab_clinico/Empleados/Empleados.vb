@@ -21,6 +21,7 @@ Public Class Empleados
             TxtId.Text = 1
         End If
     End Sub
+
     Public Sub cargar()
         query = "SELECT Id_Empleado, Nombre_Empleado, Apellido_Empleado, Dni_Empleado, Genero, Fecha_Nacimiento, Direccion_Empleado, Telefono_Empleado FROM Empleados;"
         If con.val(query) = True Then
@@ -48,16 +49,31 @@ Public Class Empleados
 
 
     Private Sub btnempleadonuevo_Click(sender As Object, e As EventArgs) Handles btnempleadonuevo.Click
-        query = "insert into Empleados(Id_Empleado, Nombre_Empleado, Apellido_Empleado, Dni_Empleado, Fecha_Nacimiento, Direccion_Empleado, Telefono_Empleado, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtempleadonombre.Text & "','" & txtempleadoapellido.Text & "','" & txtdni.Text & "','" & DateTimePicker1.Text & "' ,'" & txtdireccionempleado.Text & "', '" & txtempleadotelef.Text & "', 1,  '" & cmbgenero.Text & "')"
-        con.insertar(query)
-        MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        txtempleadonombre.Clear()
-        txtempleadoapellido.Clear()
-        txtdni.Clear()
-        txtdireccionempleado.Clear()
-        txtempleadotelef.Clear()
+        If cond = 1 Then
+            query = "insert into Empleados(Id_Empleado, Nombre_Empleado, Apellido_Empleado, Dni_Empleado, Fecha_Nacimiento, Direccion_Empleado, Telefono_Empleado, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtempleadonombre.Text & "','" & txtempleadoapellido.Text & "','" & txtdni.Text & "','" & DateTimePicker1.Text & "' ,'" & txtdireccionempleado.Text & "', '" & txtempleadotelef.Text & "', 1,  '" & cmbgenero.Text & "')"
+            con.insertar(query)
+            MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtempleadonombre.Clear()
+            txtempleadoapellido.Clear()
+            txtdni.Clear()
+            txtdireccionempleado.Clear()
+            txtempleadotelef.Clear()
+
+
+        ElseIf cond = 2 Then
+            query = "UPDATE Empleados SET Nombre_Empleado='" & txtempleadonombre.Text & "', Apellido_Empleado='" & txtempleadoapellido.Text & "', Dni_Empleado='" & txtdni.Text & "', Fecha_Nacimiento='" & DateTimePicker1.Text & "', Direccion_Empleado='" & txtdireccionempleado.Text & "', Telefono_Empleado='" & txtempleadotelef.Text & "', Genero='" & cmbgenero.Text & "' WHERE Id_Empleado='" & txtid.Text & "'"
+            con.insertar(query)
+            MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtempleadonombre.Clear()
+            txtempleadoapellido.Clear()
+            txtdni.Clear()
+            txtdireccionempleado.Clear()
+            txtempleadotelef.Clear()
+        End If
+
 
         cargar()
+        cond = 1
 
     End Sub
 
@@ -65,24 +81,24 @@ Public Class Empleados
         cargar()
         autonum()
         cond = 0
-    End Sub
-
-    Private Sub btnempleadoeditar_Click(sender As Object, e As EventArgs) Handles btnempleadoeditar.Click
-        cond = 1
-        btnempleadoeditar.Text = "Guardar"
-
+        btnempleadonuevo.Text = "Guardar Datos"
     End Sub
 
     Private Sub dgv_empleados_CellDobleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_empleados.CellDoubleClick
         cond = 2
         btnempleadonuevo.Text = "Actualizar"
-
-
-
-
-
+        txtid.Text = dgv_empleados.CurrentRow.Cells(0).Value
+        txtempleadonombre.Text = dgv_empleados.CurrentRow.Cells(1).Value
+        txtempleadoapellido.Text = dgv_empleados.CurrentRow.Cells(2).Value
+        txtdni.Text = dgv_empleados.CurrentRow.Cells(3).Value
+        cmbgenero.Text = dgv_empleados.CurrentRow.Cells(4).Value
+        DateTimePicker1.Text = dgv_empleados.CurrentRow.Cells(5).Value
+        txtdireccionempleado.Text = dgv_empleados.CurrentRow.Cells(6).Value
+        txtempleadotelef.Text = dgv_empleados.CurrentRow.Cells(7).Value
 
     End Sub
 
+    Private Sub btnempleadoeditar_Click(sender As Object, e As EventArgs) Handles btnempleadoeditar.Click
 
+    End Sub
 End Class
