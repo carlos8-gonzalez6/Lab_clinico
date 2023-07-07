@@ -23,7 +23,7 @@ Partial Class frm_pacientes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pacientes))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -32,6 +32,7 @@ Partial Class frm_pacientes
         Me.dg_pacientes = New System.Windows.Forms.DataGridView()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.gb_Pacientes = New System.Windows.Forms.GroupBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.DtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -130,14 +131,14 @@ Partial Class frm_pacientes
         Me.dg_pacientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_pacientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dg_pacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dg_pacientes.EnableHeadersVisualStyles = False
         Me.dg_pacientes.GridColor = System.Drawing.Color.SteelBlue
@@ -163,6 +164,7 @@ Partial Class frm_pacientes
         '
         'gb_Pacientes
         '
+        Me.gb_Pacientes.Controls.Add(Me.txtid)
         Me.gb_Pacientes.Controls.Add(Me.DtpFechaNac)
         Me.gb_Pacientes.Controls.Add(Me.txtTelefono)
         Me.gb_Pacientes.Controls.Add(Me.txtDireccion)
@@ -185,6 +187,15 @@ Partial Class frm_pacientes
         Me.gb_Pacientes.TabStop = False
         Me.gb_Pacientes.Text = "Datos Personales"
         Me.gb_Pacientes.UseWaitCursor = True
+        '
+        'txtid
+        '
+        Me.txtid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtid.Location = New System.Drawing.Point(267, 261)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(226, 27)
+        Me.txtid.TabIndex = 72
+        Me.txtid.UseWaitCursor = True
         '
         'DtpFechaNac
         '
@@ -377,4 +388,5 @@ Partial Class frm_pacientes
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtid As TextBox
 End Class
