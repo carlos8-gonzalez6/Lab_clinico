@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -45,8 +45,8 @@ Partial Class Empleados
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.gb_empleados = New System.Windows.Forms.GroupBox()
-        Me.txtid = New System.Windows.Forms.TextBox()
         Me.cmbgenero = New System.Windows.Forms.ComboBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_empleados.SuspendLayout()
@@ -125,14 +125,14 @@ Partial Class Empleados
         Me.dgv_empleados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv_empleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgv_empleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_empleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_empleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgv_empleados.EnableHeadersVisualStyles = False
         Me.dgv_empleados.GridColor = System.Drawing.Color.SteelBlue
@@ -295,15 +295,6 @@ Partial Class Empleados
         Me.gb_empleados.TabIndex = 41
         Me.gb_empleados.TabStop = False
         '
-        'txtid
-        '
-        Me.txtid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtid.Location = New System.Drawing.Point(231, 280)
-        Me.txtid.Name = "txtid"
-        Me.txtid.Size = New System.Drawing.Size(200, 27)
-        Me.txtid.TabIndex = 40
-        Me.txtid.Visible = False
-        '
         'cmbgenero
         '
         Me.cmbgenero.FormattingEnabled = True
@@ -312,6 +303,15 @@ Partial Class Empleados
         Me.cmbgenero.Name = "cmbgenero"
         Me.cmbgenero.Size = New System.Drawing.Size(194, 21)
         Me.cmbgenero.TabIndex = 41
+        '
+        'txtid
+        '
+        Me.txtid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtid.Location = New System.Drawing.Point(231, 280)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(200, 27)
+        Me.txtid.TabIndex = 40
+        Me.txtid.Visible = False
         '
         'Empleados
         '
