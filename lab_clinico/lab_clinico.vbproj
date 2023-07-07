@@ -79,10 +79,10 @@
     <Compile Include="CatalogoExamenes\frm_catalogo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoExamenes\categoria.Designer.vb">
-      <DependentUpon>categoria.vb</DependentUpon>
+    <Compile Include="CatalogoExamenes\frm_categoria.Designer.vb">
+      <DependentUpon>frm_categoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoExamenes\categoria.vb">
+    <Compile Include="CatalogoExamenes\frm_categoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CatalogoExamenes\EditarCategoria.Designer.vb">
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="CatalogoExamenes\frm_catalogo.resx">
       <DependentUpon>frm_catalogo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoExamenes\categoria.resx">
-      <DependentUpon>categoria.vb</DependentUpon>
+    <EmbeddedResource Include="CatalogoExamenes\frm_categoria.resx">
+      <DependentUpon>frm_categoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CatalogoExamenes\EditarCategoria.resx">
       <DependentUpon>EditarCategoria.vb</DependentUpon>

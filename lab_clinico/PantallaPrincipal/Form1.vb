@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub btncatalogo_Click(sender As Object, e As EventArgs) Handles btncatalogo.Click
-        catalogo.Show()
+        frm_categoria.Show()
     End Sub
 
     Private Sub btnfacturacion_Click(sender As Object, e As EventArgs) Handles btnfacturacion.Click

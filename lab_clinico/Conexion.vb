@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class Conexion
-    Public servidor As String = "Data Source=DESKTOP-UND6B3R\SQLEXPRESS;Initial Catalog=Laboratorio Clinico;Integrated Security=True"
+    Public servidor As String = "Data Source=localhost;Initial Catalog=Laboratorio_clinico;Integrated Security=True"
     Public cnn As New SqlConnection(servidor)
     Dim keychar As String
     Public Sub conectar()
