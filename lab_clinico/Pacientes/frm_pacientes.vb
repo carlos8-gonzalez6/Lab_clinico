@@ -3,7 +3,23 @@ Public Class frm_pacientes
     Dim con As New Conexion
     Dim query As String
     Dim dv As New DataView
+    Dim cond As Integer
+    Dim dr As SqlDataReader
 
+
+    Public Sub autonum()
+        query = "select Id_Paciente from Pacientes"
+        If con.val(query) = True Then
+            query = "select Max(Id_Paciente) from Pacientes"
+            dr = con.reader(query)
+            While dr.Read
+                TxtId.Text = dr.GetValue(0) + 1
+            End While
+            dr.Close()
+        Else
+            TxtId.Text = 1
+        End If
+    End Sub
 
     Public Sub cargar()
         query = "select Id_Paciente, Nombre_Paciente, Apellido_Paciente, Dni_Paciente, Genero, Fecha_Nacimiento, Direccion_Paciente, Telefono_Paciente from Pacientes;"
@@ -35,14 +51,12 @@ Public Class frm_pacientes
     End Sub
 
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        dv.RowFilter = "Pacientes LIKE '%" + txtBuscar.Text.Trim + "%'"
-    End Sub
 
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        query = "Update Pacientes(Nombre_Paciente,Apellido_Paciente,Dni_Paciente,Fecha_Nacimiento,Direccion_Paciente,Telefono_Paciente,Genero) VALUES('" & txtNombre.Text & "','" & txtApellido.Text & "','" & txtDni.Text & "','" & DtpFechaNac.Text & "' ,'" & txtDireccion.Text & "', '" & txtTelefono.Text & "', '" & cmbGenero.Text & "')"
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        query = "insert into Pacientes(Id_Paciente, Nombre_Paciente, Apellido_Paciente, Dni_Paciente, Fecha_Nacimiento, Direccion_Paciente, Telefono_Paciente, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtNombre.Text & "','" & txtApellido.Text & "','" & txtDni.Text & "','" & DtpFechaNac.Text & "' ,'" & txtDireccion.Text & "', '" & txtTelefono.Text & "', '" & cmbGenero.Text & "')"
         con.insertar(query)
-        MessageBox.Show(" Datos  actualizados incorrectamente ", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Datos registrados exitosamente ", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
         txtNombre.Clear()
         txtApellido.Clear()
         txtDni.Clear()
@@ -55,8 +69,16 @@ Public Class frm_pacientes
 
 
     Private Sub frm_pacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cargar()
+        autonum()
+        cond = 0
     End Sub
 
-    
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        cond = 1
+        btnEditar.Text = "Guardar"
+    End Sub
+
+
 End Class
