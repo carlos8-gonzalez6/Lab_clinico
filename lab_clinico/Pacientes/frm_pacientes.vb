@@ -40,10 +40,6 @@ Public Class frm_pacientes
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-            dg_pacientes.Columns(0).Visible = True
-            dg_pacientes.Columns(1).Width = 450
-            dg_pacientes.Columns(2).Width = 150
-            dg_pacientes.Columns(3).Width = 150
 
         Else
             MsgBox("No hay registros", MsgBoxStyle.Critical)
@@ -51,19 +47,32 @@ Public Class frm_pacientes
     End Sub
 
 
-
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        query = "insert into Pacientes(Id_Paciente, Nombre_Paciente, Apellido_Paciente, Dni_Paciente, Fecha_Nacimiento, Direccion_Paciente, Telefono_Paciente, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtNombre.Text & "','" & txtApellido.Text & "','" & txtDni.Text & "','" & DtpFechaNac.Text & "' ,'" & txtDireccion.Text & "', '" & txtTelefono.Text & "', '" & cmbGenero.Text & "')"
-        con.insertar(query)
-        MessageBox.Show("Datos registrados exitosamente ", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        txtNombre.Clear()
-        txtApellido.Clear()
-        txtDni.Clear()
-        txtDireccion.Clear()
-        txtTelefono.Clear()
+        If cond = 1 Then
+            query = "insert into Pacientes(Id_Paciente, Nombre_Paciente, Apellido_Paciente, Dni_Paciente, Fecha_Nacimiento, Direccion_Paciente, Telefono_Paciente, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtNombre.Text & "','" & txtApellido.Text & "','" & txtDni.Text & "','" & DtpFechaNac.Text & "' ,'" & txtDireccion.Text & "', '" & txtTelefono.Text & "', '" & cmbGenero.Text & "')"
+            con.insertar(query)
+            MessageBox.Show("Datos registrados exitosamente ", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtNombre.Clear()
+            txtApellido.Clear()
+            txtDni.Clear()
+            txtDireccion.Clear()
+            txtTelefono.Clear()
+
+        ElseIf cond = 2 Then
+            query = "UPDATE Pacientes SET Nombre_Paciente='" & txtNombre.Text & "', Apellido_Paciente='" & txtApellido.Text & "', Dni_Paciente='" & txtDni.Text & "', Fecha_Nacimiento='" & DtpFechaNac.Text & "', Direccion_Paciente='" & txtDireccion.Text & "', Telefono_Paciente='" & txtTelefono.Text & "', Genero='" & cmbGenero.Text & "' WHERE Id_Paciente='" & txtid.Text & "'"
+            con.insertar(query)
+            MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtNombre.Clear()
+            txtApellido.Clear()
+            txtDni.Clear()
+            txtDireccion.Clear()
+            txtTelefono.Clear()
+
+        End If
 
         cargar()
+        cond = 1
+
     End Sub
 
 
@@ -73,12 +82,24 @@ Public Class frm_pacientes
         cargar()
         autonum()
         cond = 0
+        btnGuardar.Text = "Guardar Datos"
+
     End Sub
 
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        cond = 1
-        btnEditar.Text = "Guardar"
+    Private Sub dg_pacientes_CellDobleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_pacientes.CellDoubleClick
+        cond = 2
+        btnGuardar.Text = "Actualizar"
+        txtid.Text = dg_pacientes.CurrentRow.Cells(0).Value
+        txtNombre.Text = dg_pacientes.CurrentRow.Cells(1).Value
+        txtApellido.Text = dg_pacientes.CurrentRow.Cells(2).Value
+        txtDni.Text = dg_pacientes.CurrentRow.Cells(3).Value
+        cmbGenero.Text = dg_pacientes.CurrentRow.Cells(4).Value
+        DtpFechaNac.Text = dg_pacientes.CurrentRow.Cells(5).Value
+        txtDireccion.Text = dg_pacientes.CurrentRow.Cells(6).Value
+        txtTelefono.Text = dg_pacientes.CurrentRow.Cells(7).Value
+
     End Sub
+
 
 
 End Class

@@ -22,8 +22,9 @@ Partial Class Empleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,9 +48,11 @@ Partial Class Empleados
         Me.gb_empleados = New System.Windows.Forms.GroupBox()
         Me.cmbgenero = New System.Windows.Forms.ComboBox()
         Me.txtid = New System.Windows.Forms.TextBox()
+        Me.epnombre_empleado = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_empleados.SuspendLayout()
+        CType(Me.epnombre_empleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlTitulo
@@ -111,7 +114,7 @@ Partial Class Empleados
         Me.btnempleadoeditar.Name = "btnempleadoeditar"
         Me.btnempleadoeditar.Size = New System.Drawing.Size(197, 47)
         Me.btnempleadoeditar.TabIndex = 24
-        Me.btnempleadoeditar.Text = "Editar Empleado"
+        Me.btnempleadoeditar.Text = "Confirmar cambios"
         Me.btnempleadoeditar.UseVisualStyleBackColor = False
         '
         'dgv_empleados
@@ -125,14 +128,14 @@ Partial Class Empleados
         Me.dgv_empleados.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv_empleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgv_empleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_empleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_empleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgv_empleados.EnableHeadersVisualStyles = False
         Me.dgv_empleados.GridColor = System.Drawing.Color.SteelBlue
@@ -313,6 +316,10 @@ Partial Class Empleados
         Me.txtid.TabIndex = 40
         Me.txtid.Visible = False
         '
+        'epnombre_empleado
+        '
+        Me.epnombre_empleado.ContainerControl = Me
+        '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -332,6 +339,7 @@ Partial Class Empleados
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_empleados.ResumeLayout(False)
         Me.gb_empleados.PerformLayout()
+        CType(Me.epnombre_empleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -360,4 +368,5 @@ Partial Class Empleados
     Friend WithEvents gb_empleados As GroupBox
     Friend WithEvents txtid As TextBox
     Friend WithEvents cmbgenero As ComboBox
+    Friend WithEvents epnombre_empleado As ErrorProvider
 End Class
