@@ -122,6 +122,12 @@
     <Compile Include="Facturacion\frm_facturacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frm_facturacion_examenes.Designer.vb">
+      <DependentUpon>frm_facturacion_examenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frm_facturacion_examenes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_facturacion.resx">
       <DependentUpon>frm_facturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frm_facturacion_examenes.resx">
+      <DependentUpon>frm_facturacion_examenes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
