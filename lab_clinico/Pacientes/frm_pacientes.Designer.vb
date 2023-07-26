@@ -22,16 +22,17 @@ Partial Class frm_pacientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pacientes))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
         Me.dg_pacientes = New System.Windows.Forms.DataGridView()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.gb_Pacientes = New System.Windows.Forms.GroupBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
         Me.DtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
@@ -46,9 +47,11 @@ Partial Class frm_pacientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.EP = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dg_pacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_Pacientes.SuspendLayout()
+        CType(Me.EP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlTitulo
@@ -103,22 +106,6 @@ Partial Class frm_pacientes
         Me.btnGuardar.UseVisualStyleBackColor = False
         Me.btnGuardar.UseWaitCursor = True
         '
-        'btnEditar
-        '
-        Me.btnEditar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEditar.Location = New System.Drawing.Point(689, 400)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(197, 47)
-        Me.btnEditar.TabIndex = 23
-        Me.btnEditar.Text = "Editar Paciente"
-        Me.btnEditar.UseVisualStyleBackColor = False
-        Me.btnEditar.UseWaitCursor = True
-        '
         'dg_pacientes
         '
         Me.dg_pacientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -130,14 +117,14 @@ Partial Class frm_pacientes
         Me.dg_pacientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_pacientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dg_pacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dg_pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dg_pacientes.EnableHeadersVisualStyles = False
         Me.dg_pacientes.GridColor = System.Drawing.Color.SteelBlue
@@ -163,6 +150,7 @@ Partial Class frm_pacientes
         '
         'gb_Pacientes
         '
+        Me.gb_Pacientes.Controls.Add(Me.txtid)
         Me.gb_Pacientes.Controls.Add(Me.DtpFechaNac)
         Me.gb_Pacientes.Controls.Add(Me.txtTelefono)
         Me.gb_Pacientes.Controls.Add(Me.txtDireccion)
@@ -185,6 +173,15 @@ Partial Class frm_pacientes
         Me.gb_Pacientes.TabStop = False
         Me.gb_Pacientes.Text = "Datos Personales"
         Me.gb_Pacientes.UseWaitCursor = True
+        '
+        'txtid
+        '
+        Me.txtid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtid.Location = New System.Drawing.Point(267, 261)
+        Me.txtid.Name = "txtid"
+        Me.txtid.Size = New System.Drawing.Size(226, 27)
+        Me.txtid.TabIndex = 72
+        Me.txtid.UseWaitCursor = True
         '
         'DtpFechaNac
         '
@@ -330,6 +327,10 @@ Partial Class frm_pacientes
         Me.Label2.Text = "Nombre del Paciente"
         Me.Label2.UseWaitCursor = True
         '
+        'EP
+        '
+        Me.EP.ContainerControl = Me
+        '
         'frm_pacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -339,7 +340,6 @@ Partial Class frm_pacientes
         Me.Controls.Add(Me.gb_Pacientes)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dg_pacientes)
-        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.pnlTitulo)
         Me.Name = "frm_pacientes"
@@ -350,6 +350,7 @@ Partial Class frm_pacientes
         CType(Me.dg_pacientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_Pacientes.ResumeLayout(False)
         Me.gb_Pacientes.PerformLayout()
+        CType(Me.EP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,7 +360,6 @@ Partial Class frm_pacientes
     Friend WithEvents Button1 As Button
     Private WithEvents Label1 As Label
     Private WithEvents btnGuardar As Button
-    Private WithEvents btnEditar As Button
     Private WithEvents dg_pacientes As DataGridView
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents gb_Pacientes As GroupBox
@@ -377,4 +377,6 @@ Partial Class frm_pacientes
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtid As TextBox
+    Friend WithEvents EP As ErrorProvider
 End Class

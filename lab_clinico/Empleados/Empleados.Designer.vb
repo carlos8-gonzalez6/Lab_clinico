@@ -22,6 +22,7 @@ Partial Class Empleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
@@ -45,11 +46,13 @@ Partial Class Empleados
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.gb_empleados = New System.Windows.Forms.GroupBox()
-        Me.txtid = New System.Windows.Forms.TextBox()
         Me.cmbgenero = New System.Windows.Forms.ComboBox()
+        Me.txtid = New System.Windows.Forms.TextBox()
+        Me.epnombre_empleado = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_empleados.SuspendLayout()
+        CType(Me.epnombre_empleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlTitulo
@@ -111,7 +114,7 @@ Partial Class Empleados
         Me.btnempleadoeditar.Name = "btnempleadoeditar"
         Me.btnempleadoeditar.Size = New System.Drawing.Size(197, 47)
         Me.btnempleadoeditar.TabIndex = 24
-        Me.btnempleadoeditar.Text = "Editar Empleado"
+        Me.btnempleadoeditar.Text = "Confirmar cambios"
         Me.btnempleadoeditar.UseVisualStyleBackColor = False
         '
         'dgv_empleados
@@ -295,6 +298,15 @@ Partial Class Empleados
         Me.gb_empleados.TabIndex = 41
         Me.gb_empleados.TabStop = False
         '
+        'cmbgenero
+        '
+        Me.cmbgenero.FormattingEnabled = True
+        Me.cmbgenero.Items.AddRange(New Object() {"MASCULINO", "FEMENINO"})
+        Me.cmbgenero.Location = New System.Drawing.Point(19, 286)
+        Me.cmbgenero.Name = "cmbgenero"
+        Me.cmbgenero.Size = New System.Drawing.Size(194, 21)
+        Me.cmbgenero.TabIndex = 41
+        '
         'txtid
         '
         Me.txtid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -304,14 +316,9 @@ Partial Class Empleados
         Me.txtid.TabIndex = 40
         Me.txtid.Visible = False
         '
-        'cmbgenero
+        'epnombre_empleado
         '
-        Me.cmbgenero.FormattingEnabled = True
-        Me.cmbgenero.Items.AddRange(New Object() {"MASCULINO", "FEMENINO"})
-        Me.cmbgenero.Location = New System.Drawing.Point(19, 286)
-        Me.cmbgenero.Name = "cmbgenero"
-        Me.cmbgenero.Size = New System.Drawing.Size(194, 21)
-        Me.cmbgenero.TabIndex = 41
+        Me.epnombre_empleado.ContainerControl = Me
         '
         'Empleados
         '
@@ -332,6 +339,7 @@ Partial Class Empleados
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_empleados.ResumeLayout(False)
         Me.gb_empleados.PerformLayout()
+        CType(Me.epnombre_empleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -360,4 +368,5 @@ Partial Class Empleados
     Friend WithEvents gb_empleados As GroupBox
     Friend WithEvents txtid As TextBox
     Friend WithEvents cmbgenero As ComboBox
+    Friend WithEvents epnombre_empleado As ErrorProvider
 End Class
