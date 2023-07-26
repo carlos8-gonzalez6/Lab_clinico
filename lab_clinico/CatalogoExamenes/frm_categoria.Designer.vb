@@ -23,8 +23,6 @@ Partial Class frm_categoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnnuevacategoria = New System.Windows.Forms.Button()
@@ -33,32 +31,10 @@ Partial Class frm_categoria
         Me.txtnombrecategoria = New System.Windows.Forms.TextBox()
         Me.dgv_categoria = New System.Windows.Forms.DataGridView()
         Me.btn_categoria = New System.Windows.Forms.Button()
-        Me.Panel2.SuspendLayout()
+        Me.btn_examenes = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_categoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(2, 59)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(538, 50)
-        Me.Panel2.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(204, 11)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 23)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Exámenes"
         '
         'Panel1
         '
@@ -162,12 +138,24 @@ Partial Class frm_categoria
         Me.btn_categoria.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.btn_categoria.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_categoria.ForeColor = System.Drawing.Color.White
-        Me.btn_categoria.Location = New System.Drawing.Point(531, 58)
+        Me.btn_categoria.Location = New System.Drawing.Point(519, 58)
         Me.btn_categoria.Name = "btn_categoria"
-        Me.btn_categoria.Size = New System.Drawing.Size(517, 51)
+        Me.btn_categoria.Size = New System.Drawing.Size(529, 51)
         Me.btn_categoria.TabIndex = 26
         Me.btn_categoria.Text = "Categoría"
         Me.btn_categoria.UseVisualStyleBackColor = False
+        '
+        'btn_examenes
+        '
+        Me.btn_examenes.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btn_examenes.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_examenes.ForeColor = System.Drawing.Color.White
+        Me.btn_examenes.Location = New System.Drawing.Point(2, 58)
+        Me.btn_examenes.Name = "btn_examenes"
+        Me.btn_examenes.Size = New System.Drawing.Size(523, 51)
+        Me.btn_examenes.TabIndex = 27
+        Me.btn_examenes.Text = "Examenes"
+        Me.btn_examenes.UseVisualStyleBackColor = False
         '
         'frm_categoria
         '
@@ -175,6 +163,7 @@ Partial Class frm_categoria
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1044, 676)
+        Me.Controls.Add(Me.btn_examenes)
         Me.Controls.Add(Me.btn_categoria)
         Me.Controls.Add(Me.dgv_categoria)
         Me.Controls.Add(Me.txtnombrecategoria)
@@ -182,11 +171,8 @@ Partial Class frm_categoria
         Me.Controls.Add(Me.btneditarcategoria)
         Me.Controls.Add(Me.btnnuevacategoria)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel2)
         Me.Name = "frm_categoria"
         Me.Text = "categoria"
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.dgv_categoria, System.ComponentModel.ISupportInitialize).EndInit()
@@ -194,9 +180,6 @@ Partial Class frm_categoria
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents btnnuevacategoria As Button
@@ -205,4 +188,5 @@ Partial Class frm_categoria
     Friend WithEvents txtnombrecategoria As TextBox
     Private WithEvents dgv_categoria As DataGridView
     Friend WithEvents btn_categoria As Button
+    Friend WithEvents btn_examenes As Button
 End Class
