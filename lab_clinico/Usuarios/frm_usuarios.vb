@@ -44,7 +44,6 @@ Public Class frm_usuarios
 
         ElseIf cond = 2 Then
             query = "UPDATE Usuarios SET Nombre_Us = '" & txt_nombre_usuario.Text & "', Dni_Us = '" & txt_dni.Text & "', Contrasenia_Us = '" & txt_contraseña.Text & "', Correo_Us = '" & txt_correo.Text & "'"
-            con.actualizar(query)
             MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txt_nombre_usuario.Clear()
             txt_dni.Clear()
