@@ -101,7 +101,7 @@ Public Class frm_usuarios
         If isValid Then
             ' Continuar con la lógica del programa
             ' Crear la consulta SQL para insertar los datos de facturación en la base de datos
-            query = "insert into Facturacion(Nombre_Us, Correo_Us, DNI_Us) values(GETDATE(), '" & txt_nombre_usuario.Text & "', '" & txt_correo.Text & "', '" & txt_dni.Text & "')"
+            query = "insert into Facturacion(id_usuario, Nombre_Us, Dni_Us, Contrasenia_Us, Correo_Us) values(GETDATE(), '" & txt_nombre_usuario.Text & "', '" & txt_dni.Text & "', '" & txt_contraseña.Text & "', '" & txt_correo.Text & "')"
             con.insertar(query)
             ' Mostrar un mensaje indicando que los datos fueron insertados exitosamente
             MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -115,8 +115,6 @@ Public Class frm_usuarios
         Else
             ' Mostrar un mensaje o realizar alguna acción si algún campo no es válido.
         End If
-
-
 
 
     End Sub
