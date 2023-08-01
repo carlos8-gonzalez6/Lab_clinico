@@ -24,7 +24,7 @@ Partial Class frm_pacientes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pacientes))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTitulo = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -48,6 +48,7 @@ Partial Class frm_pacientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.EP = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.pnlTitulo.SuspendLayout()
         CType(Me.dg_pacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_Pacientes.SuspendLayout()
@@ -117,14 +118,14 @@ Partial Class frm_pacientes
         Me.dg_pacientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_pacientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dg_pacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_pacientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dg_pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dg_pacientes.EnableHeadersVisualStyles = False
         Me.dg_pacientes.GridColor = System.Drawing.Color.SteelBlue
@@ -182,6 +183,7 @@ Partial Class frm_pacientes
         Me.txtid.Size = New System.Drawing.Size(226, 27)
         Me.txtid.TabIndex = 72
         Me.txtid.UseWaitCursor = True
+        Me.txtid.Visible = False
         '
         'DtpFechaNac
         '
@@ -331,12 +333,30 @@ Partial Class frm_pacientes
         '
         Me.EP.ContainerControl = Me
         '
+        'btnEditar
+        '
+        Me.btnEditar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEditar.Location = New System.Drawing.Point(711, 400)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(197, 47)
+        Me.btnEditar.TabIndex = 60
+        Me.btnEditar.Text = "Editar Paciente"
+        Me.btnEditar.UseVisualStyleBackColor = False
+        Me.btnEditar.UseWaitCursor = True
+        '
         'frm_pacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(960, 571)
+        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.gb_Pacientes)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dg_pacientes)
@@ -379,4 +399,5 @@ Partial Class frm_pacientes
     Friend WithEvents Label2 As Label
     Friend WithEvents txtid As TextBox
     Friend WithEvents EP As ErrorProvider
+    Private WithEvents btnEditar As Button
 End Class

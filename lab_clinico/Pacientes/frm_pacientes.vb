@@ -50,31 +50,33 @@ Public Class frm_pacientes
 
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        ' Variable para verificar si todos los campos son válidos
         Dim isValid As Boolean = True
-        If cond = 1 Then
+
+        If isValid Then
+            ' Continuar con la lógica del programa
+            ' Crear la consulta SQL para insertar los datos de pacientes en la base de datos
             query = "insert into Pacientes(Id_Paciente, Nombre_Paciente, Apellido_Paciente, Dni_Paciente, Fecha_Nacimiento, Direccion_Paciente, Telefono_Paciente, Estatus_Us, Genero) VALUES('" & txtid.Text & "','" & txtNombre.Text & "','" & txtApellido.Text & "','" & txtDni.Text & "','" & DtpFechaNac.Text & "' ,'" & txtDireccion.Text & "', '" & txtTelefono.Text & "', '" & cmbGenero.Text & "')"
             con.insertar(query)
+            ' Mostrar un mensaje indicando que los datos fueron insertados exitosamente
             MessageBox.Show("Datos registrados exitosamente ", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Limpiar los campos de entrada
             txtNombre.Clear()
             txtApellido.Clear()
             txtDni.Clear()
             txtDireccion.Clear()
             txtTelefono.Clear()
 
-        ElseIf cond = 2 Then
-            query = "UPDATE Pacientes SET Nombre_Paciente='" & txtNombre.Text & "', Apellido_Paciente='" & txtApellido.Text & "', Dni_Paciente='" & txtDni.Text & "', Fecha_Nacimiento='" & DtpFechaNac.Text & "', Direccion_Paciente='" & txtDireccion.Text & "', Telefono_Paciente='" & txtTelefono.Text & "', Genero='" & cmbGenero.Text & "' WHERE Id_Paciente='" & txtid.Text & "'"
-            con.insertar(query)
-            MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            txtNombre.Clear()
-            txtApellido.Clear()
-            txtDni.Clear()
-            txtDireccion.Clear()
-            txtTelefono.Clear()
+
+            autonum()
+            cargar()
+
+        Else
+            ' Mostrar un mensaje o realizar alguna acción si algún campo no es válido.
+            MessageBox.Show("Datos Ingresados Incorrectamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
 
-        cargar()
-        cond = 1
 
 
         'Nombre del Paciente'
@@ -83,6 +85,7 @@ Public Class frm_pacientes
         If Not IsString(txtNombre.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtNombre, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtNombre, "") ' Limpiar el error
@@ -92,6 +95,7 @@ Public Class frm_pacientes
         If Not IsValidNombre(txtNombre.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtNombre, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtNombre, "") ' Limpiar el error
@@ -103,6 +107,7 @@ Public Class frm_pacientes
         If Not IsString(txtApellido.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtApellido, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtApellido, "") ' Limpiar el error
@@ -112,6 +117,7 @@ Public Class frm_pacientes
         If Not IsValidApellido(txtApellido.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtApellido, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtApellido, "") ' Limpiar el error
@@ -124,6 +130,7 @@ Public Class frm_pacientes
         If Not IsInteger(txtDni.Text) And Not IsDecimal(txtDni.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtDni, "El campo debe ser un valor entero")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtDni, "") ' Limpiar el error
@@ -135,6 +142,7 @@ Public Class frm_pacientes
         If Not IsString(cmbGenero.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(cmbGenero, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(cmbGenero, "") ' Limpiar el error
@@ -147,6 +155,7 @@ Public Class frm_pacientes
         If Not IsString(txtDireccion.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtDireccion, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtDireccion, "") ' Limpiar el error
@@ -156,6 +165,7 @@ Public Class frm_pacientes
         If Not IsValidDireccion(txtDireccion.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtDireccion, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtDireccion, "") ' Limpiar el error
@@ -167,6 +177,7 @@ Public Class frm_pacientes
         If Not IsInteger(txtTelefono.Text) And Not IsDecimal(txtDni.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtTelefono, "El campo debe ser un valor entero")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtTelefono, "") ' Limpiar el error
@@ -178,6 +189,7 @@ Public Class frm_pacientes
         If Not IsInteger(txtid.Text) And Not IsDecimal(txtDni.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txtid, "El campo debe ser un valor entero")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txtid, "") ' Limpiar el error
@@ -234,14 +246,13 @@ Public Class frm_pacientes
 
         cargar()
         autonum()
-        cond = 0
-        btnGuardar.Text = "Guardar Datos"
+
+        btnEditar.Visible = False
 
     End Sub
 
     Private Sub dg_pacientes_CellDobleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_pacientes.CellDoubleClick
-        cond = 2
-        btnGuardar.Text = "Actualizar"
+
         txtid.Text = dg_pacientes.CurrentRow.Cells(0).Value
         txtNombre.Text = dg_pacientes.CurrentRow.Cells(1).Value
         txtApellido.Text = dg_pacientes.CurrentRow.Cells(2).Value
@@ -251,8 +262,24 @@ Public Class frm_pacientes
         txtDireccion.Text = dg_pacientes.CurrentRow.Cells(6).Value
         txtTelefono.Text = dg_pacientes.CurrentRow.Cells(7).Value
 
+        btnEditar.Visible = True
+
     End Sub
 
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        query = "UPDATE Pacientes SET Nombre_Paciente='" & txtNombre.Text & "', Apellido_Paciente='" & txtApellido.Text & "', Dni_Paciente='" & txtDni.Text & "', Fecha_Nacimiento='" & DtpFechaNac.Text & "', Direccion_Paciente='" & txtDireccion.Text & "', Telefono_Paciente='" & txtTelefono.Text & "', Genero='" & cmbGenero.Text & "' WHERE Id_Paciente='" & txtid.Text & "'"
+        con.insertar(query)
+        MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        txtNombre.Clear()
+        txtApellido.Clear()
+        txtDni.Clear()
+        txtDireccion.Clear()
+        txtTelefono.Clear()
+
+        btnEditar.Visible = False
+        cargar()
+        autonum()
 
 
+    End Sub
 End Class
