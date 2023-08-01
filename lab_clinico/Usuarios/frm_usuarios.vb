@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class frm_usuarios
     Dim con As New Conexion
@@ -33,24 +34,69 @@ Public Class frm_usuarios
 
 
     Private Sub btn_agregar_usuarios_Click(sender As Object, e As EventArgs) Handles btn_agregar_usuarios.Click
-        If cond = 1 Then
-            query = "INSERT INTO Usuarios(Nombre_Us,Dni_Us,Contrasenia_Us,Correo_Us) VALUES('" & txt_nombre_usuario.Text & "','" & txt_dni.Text & "','" & txt_contraseña.Text & "','" & txt_correo.Text & "')"
-            con.insertar(query)
-            MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            txt_nombre_usuario.Clear()
-            txt_dni.Clear()
-            txt_contraseña.Clear()
-            txt_correo.Clear()
-
-        ElseIf cond = 2 Then
-            query = "UPDATE Usuarios SET Nombre_Us = '" & txt_nombre_usuario.Text & "', Dni_Us = '" & txt_dni.Text & "', Contrasenia_Us = '" & txt_contraseña.Text & "', Correo_Us = '" & txt_correo.Text & "'"
-            MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            txt_nombre_usuario.Clear()
-            txt_dni.Clear()
-            txt_contraseña.Clear()
-            txt_correo.Clear()
+        ' Variable para verificar si todos los campos son válidos
+        Dim isValid As Boolean = True
+        ' Verificar si el campo TextBox está vacío o no es una cadena
+        If Not IsString(txt_nombre_usuario.Text) Then
+            ' Mostrar el error utilizando ErrorProvider
+            EP.SetError(txt_nombre_usuario, "El campo debe ser un valor de texto")
+            isValid = False
+        Else
+            ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
+            EP.SetError(txt_nombre_usuario, "") ' Limpiar el error
         End If
-        cargar()
+
+        If Not IsString(txt_correo.Text) Then
+            ' Mostrar el error utilizando ErrorProvider
+            EP.SetError(txt_correo, "El campo debe ser llenado segun la validacion correspondiente")
+            isValid = False
+        Else
+            ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
+            EP.SetError(txt_correo, "") ' Limpiar el error
+        End If
+
+        ' Verificar si el campo TextBox está vacío o no es un entero
+        If Not IsInteger(txt_dni.Text) Then
+            ' Mostrar el error utilizando ErrorProvider
+            EP.SetError(txt_dni, "El campo debe ser un valor entero")
+            isValid = False
+        Else
+            ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
+            EP.SetError(txt_dni, "") ' Limpiar el error
+        End If
+
+        Dim password As String = txt_contraseña.Text
+
+        'Validamos la contraseña utilizando expresiones regulares
+        Dim regex As New Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$")
+        Dim isValid2 As Boolean = regex.IsMatch(password)
+
+        If isValid2 Then
+            'La contraseña es válida, limpiamos cualquier mensaje de error previo
+            EP.SetError(txt_contraseña, "")
+        Else
+            'La contraseña no cumple con los requisitos, mostramos un mensaje de error
+            EP.SetError(txt_contraseña, "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.")
+        End If
+
+        ' Si isValid es verdadero, significa que todos los campos son válidos.
+        If isValid Then
+            ' Continuar con la lógica del programa
+            ' Crear la consulta SQL para insertar los datos de facturación en la base de datos
+            query = "insert into Facturacion(Nombre_Us, Correo_Us, DNI_Us) values(GETDATE(), '" & txt_nombre_usuario.Text & "', '" & txt_correo.Text & "', '" & txt_dni.Text & "')"
+            con.insertar(query)
+            ' Mostrar un mensaje indicando que los datos fueron insertados exitosamente
+            MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Limpiar los campos de entrada
+            txt_nombre_usuario.Clear()
+            txt_correo.Clear()
+            txt_dni.Clear()
+            txt_contraseña.Clear()
+            txt_confirmar.Clear()
+            cargar()
+        Else
+            ' Mostrar un mensaje o realizar alguna acción si algún campo no es válido.
+        End If
 
 
     End Sub
@@ -68,5 +114,26 @@ Public Class frm_usuarios
         cargar()
     End Sub
 
+    ' Función para verificar si el valor es una cadena no vacía
+    Private Function IsString(value As String) As Boolean
+        Return Not String.IsNullOrEmpty(value)
+    End Function
 
+    ' Función para verificar si el valor es un número entero
+    Private Function IsInteger(value As String) As Boolean
+        Dim result As Integer
+        Return Integer.TryParse(value, result)
+    End Function
+
+    ' Función para verificar si el valor es un número decimal
+    Private Function IsDecimal(value As String) As Boolean
+        Dim result As Decimal
+        Return Decimal.TryParse(value, result)
+    End Function
+
+    ' Función para verificar si el campo Paciente tiene Nombre y Apellido separados por un espacio
+    Private Function IsValidPaciente(value As String) As Boolean
+        ' Verificar que el campo no esté vacío y contenga al menos un espacio
+        Return Not String.IsNullOrEmpty(value) AndAlso value.Contains(" ")
+    End Function
 End Class
