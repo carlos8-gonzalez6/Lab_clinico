@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Windows
-Imports System.Windows.Forms.DataFormats
 
 Public Class frm_facturacion
     Dim con As New Conexion
