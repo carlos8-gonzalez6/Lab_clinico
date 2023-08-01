@@ -64,7 +64,7 @@ Partial Class frm_usuarios
         Me.btn_agregar_usuarios.ForeColor = System.Drawing.Color.White
         Me.btn_agregar_usuarios.Location = New System.Drawing.Point(462, 513)
         Me.btn_agregar_usuarios.Name = "btn_agregar_usuarios"
-        Me.btn_agregar_usuarios.Size = New System.Drawing.Size(211, 46)
+        Me.btn_agregar_usuarios.Size = New System.Drawing.Size(214, 46)
         Me.btn_agregar_usuarios.TabIndex = 2
         Me.btn_agregar_usuarios.Text = "AGREGAR"
         Me.btn_agregar_usuarios.UseVisualStyleBackColor = False
@@ -74,9 +74,9 @@ Partial Class frm_usuarios
         Me.btn_editar_usuarios.BackColor = System.Drawing.Color.OrangeRed
         Me.btn_editar_usuarios.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.btn_editar_usuarios.ForeColor = System.Drawing.Color.White
-        Me.btn_editar_usuarios.Location = New System.Drawing.Point(715, 513)
+        Me.btn_editar_usuarios.Location = New System.Drawing.Point(682, 513)
         Me.btn_editar_usuarios.Name = "btn_editar_usuarios"
-        Me.btn_editar_usuarios.Size = New System.Drawing.Size(211, 46)
+        Me.btn_editar_usuarios.Size = New System.Drawing.Size(199, 46)
         Me.btn_editar_usuarios.TabIndex = 3
         Me.btn_editar_usuarios.Text = "EDITAR"
         Me.btn_editar_usuarios.UseVisualStyleBackColor = False
