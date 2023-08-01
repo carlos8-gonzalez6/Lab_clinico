@@ -37,7 +37,7 @@ Public Class frm_usuarios
         ' Variable para verificar si todos los campos son válidos
         Dim isValid As Boolean = True
         ' Verificar si el campo TextBox está vacío o no es una cadena
-        If Not IsString(txt_nombre_usuario.Text) Then
+        If Not IsString2(txt_nombre_usuario.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txt_nombre_usuario, "El campo debe ser un valor de texto")
             isValid = False
@@ -69,14 +69,32 @@ Public Class frm_usuarios
 
         'Validamos la contraseña utilizando expresiones regulares
         Dim regex As New Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$")
-        Dim isValid2 As Boolean = regex.IsMatch(password)
+        Dim isValidcontra As Boolean = regex.IsMatch(password)
 
-        If isValid2 Then
+        If isValidcontra Then
             'La contraseña es válida, limpiamos cualquier mensaje de error previo
             EP.SetError(txt_contraseña, "")
         Else
             'La contraseña no cumple con los requisitos, mostramos un mensaje de error
             EP.SetError(txt_contraseña, "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.")
+        End If
+
+        Dim password2 As String = txt_confirmar.Text
+
+        'Validamos la contraseña utilizando expresiones regulares
+        Dim isValidcontra2 As Boolean = regex.IsMatch(password)
+
+        If isValidcontra2 Then
+            'La contraseña es válida, limpiamos cualquier mensaje de error previo
+            EP.SetError(txt_confirmar, "")
+        Else
+            'La contraseña no cumple con los requisitos, mostramos un mensaje de error
+            EP.SetError(txt_confirmar, "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.")
+        End If
+
+        If txt_contraseña.Text <> txt_confirmar.Text Then
+            MessageBox.Show("Las contraseñas no coinsiden", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            isValid = False
         End If
 
         ' Si isValid es verdadero, significa que todos los campos son válidos.
@@ -99,6 +117,8 @@ Public Class frm_usuarios
         End If
 
 
+
+
     End Sub
 
     Private Sub dg_usuarios_CellDobleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_usuarios.CellDoubleClick
@@ -119,6 +139,17 @@ Public Class frm_usuarios
         Return Not String.IsNullOrEmpty(value)
     End Function
 
+    ' Función para verificar si el valor es una cadena no vacía
+    Private Function IsString2(value As String) As Boolean
+        ' Verificar si todos los caracteres son letras
+        For Each c As Char In value
+            If Not Char.IsLetter(c) Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
     ' Función para verificar si el valor es un número entero
     Private Function IsInteger(value As String) As Boolean
         Dim result As Integer
@@ -136,4 +167,5 @@ Public Class frm_usuarios
         ' Verificar que el campo no esté vacío y contenga al menos un espacio
         Return Not String.IsNullOrEmpty(value) AndAlso value.Contains(" ")
     End Function
+
 End Class
