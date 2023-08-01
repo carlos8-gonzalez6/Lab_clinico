@@ -8,7 +8,7 @@ Public Class frm_facturacion_examenes
     Dim dr As SqlDataReader
 
     Public Sub cargar()
-        query = "select em.Id_Examen_Med as 'Código' , e.Nombre_Exm as 'Examen' , CONCAT(p.Nombre_Paciente,' ',p.Apellido_Paciente) as 'Paciente' , e.Costo_Examen as 'Precio' from Examenes_Medicos em join Pacientes p on p.Id_Paciente = em.Id_Paciente join Examenes_Medicos_Detalles emd on emd.Id_Examen_Med = em.Id_Examen_Med join Examenes e on e.Id_Examen = emd.Id_Examen"
+        query = "select em.Id_Examen_Med 'Codigo' ,e.Nombre_Exm 'Nombre del Examen', p.Id_Paciente ,CONCAT(p.Nombre_Paciente,' ',p.Apellido_Paciente) 'Paciente', u.id_usuario , coalesce(CONCAT(emp.Nombre_Empleado,' ',emp.Apellido_Empleado) ,(select concat(Nombres,' ',Apellidos) from Medicos where Dni = u.Dni_Us)) 'Empleado' , em.Fecha_Registro 'Fecha', em.Estatus_Examen 'Estado', a.Nombre_Analisis 'Tipo de Área', e.Costo_Examen 'Precio' from Examenes_Medicos em join Pacientes p on p.Id_Paciente = em.Id_Paciente join Examenes_Medicos_Detalles emd on emd.Id_Examen_Med = em.Id_Examen_Med join Analisis a on a.Id_Analisis = emd.Id_Analisis join Examenes e on e.Id_Examen = emd.Id_Examen join Usuarios u on u.id_usuario = em.Id_Usuario  join Empleados emp on emp.Dni_Empleado = u.Dni_Us"
         If con.val(query) = True Then
             Try
                 Dim da As New SqlDataAdapter(query, con.cnn)

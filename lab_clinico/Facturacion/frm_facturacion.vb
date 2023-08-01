@@ -7,8 +7,22 @@ Public Class frm_facturacion
     Dim cond As Integer
     Dim dr As SqlDataReader
 
+    Public Sub autonum()
+        query = "select Id_Facturacion from Facturacion"
+        If con.val(query) = True Then
+            query = "select Max(Id_Facturacion) from Facturacion"
+            dr = con.reader(query)
+            While dr.Read
+                txtID.Text = dr.GetValue(0) + 1
+            End While
+            dr.Close()
+        Else
+            txtID.Text = 1
+        End If
+    End Sub
+
     Public Sub cargar()
-        query = "SELECT Id_Facturacion, Fecha_Facturacion, CONCAT(p.Nombre_Paciente,' ',p.Apellido_Paciente) as 'Paciente' ,Nombre_Us, Sub_Total, ISV, descuento from Facturacion f join Usuarios u on u.id_usuario = f.Id_Usuario join Pacientes p on p.Id_Paciente = f.Id_Paciente"
+        query = "select f.Id_Facturacion 'Código', f.Fecha_Facturacion 'Fecha de Facturacion', (select CONCAT(Nombre_Paciente,' ',Apellido_Paciente) from Pacientes where Id_Paciente = f.Id_Paciente) 'Paciente', coalesce(CONCAT(e.Nombre_Empleado,' ',e.Apellido_Empleado) ,(select concat(Nombres,' ',Apellidos) from Medicos where Dni = u.Dni_Us)) 'Empleado', f.Sub_Total 'Sub Total', f.ISV 'ISV', f.descuento 'Descuento' from Facturacion f join Usuarios u on u.id_usuario = f.Id_Usuario join Empleados e on e.Dni_Empleado = u.Dni_Us"
         If con.val(query) = True Then
             Try
                 Dim da As New SqlDataAdapter(query, con.cnn)
@@ -32,29 +46,37 @@ Public Class frm_facturacion
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        ' Crear una instancia del formulario secundario (Form2)
+        ' Crear una instancia del formulario secundario (frm_facturacion_examenes)
         Dim examenes As New frm_facturacion_examenes()
         ' Mostrar el formulario secundario como una ventana emergente
         If frm_facturacion_examenes.ShowDialog() = DialogResult.OK Then
             ' Obtener los datos seleccionados en el formulario secundario
-            Dim nombreExamen As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Examen").Value.ToString()
+            Dim nombreExamen As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Nombre del Examen").Value.ToString()
+            Dim id_paciente As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Id_Paciente").Value.ToString()
+            Dim id_empleado As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("id_usuario").Value.ToString()
             Dim paciente As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Paciente").Value.ToString()
             Dim precio As Decimal = Convert.ToDecimal(frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Precio").Value)
 
             ' Mostrar los datos en los TextBox correspondientes en frm_facturacion
             txt_examen.Text = nombreExamen.Trim()
+            txt_id_paciente.Text = id_paciente.Trim()
+            txt_id_empleado.Text = id_empleado.Trim()
             txt_paciente.Text = paciente.Trim()
             txt_precio.Text = precio.ToString().Trim()
         End If
     End Sub
 
     Private Sub btn_frm_facturacion1_Click(sender As Object, e As EventArgs) Handles btn_frm_facturacion1.Click
+        Dim precio As Decimal = Convert.ToDecimal(txt_precio.Text)
+        Dim descuento As Decimal = Convert.ToDecimal(txt_descuento.Text)
+        Dim isv As Decimal = precio - descuento * Convert.ToDecimal(0.15)
         Dim isValid As Boolean = True
 
         ' Verificar si el campo TextBox está vacío o no es una cadena
         If Not IsString(txt_examen.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txt_examen, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txt_examen, "") ' Limpiar el error
@@ -64,6 +86,7 @@ Public Class frm_facturacion
         If Not IsValidPaciente(txt_paciente.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txt_paciente, "El campo debe ser un valor de texto")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txt_paciente, "") ' Limpiar el error
@@ -73,6 +96,7 @@ Public Class frm_facturacion
         If Not IsInteger(txt_precio.Text) And Not IsDecimal(txt_precio.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txt_precio, "El campo debe ser un valor entero")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txt_precio, "") ' Limpiar el error
@@ -82,6 +106,7 @@ Public Class frm_facturacion
         If Not IsInteger(txt_descuento.Text) And Not IsDecimal(txt_descuento.Text) Then
             ' Mostrar el error utilizando ErrorProvider
             EP.SetError(txt_descuento, "El campo debe ser un valor entero")
+            isValid = False
         Else
             ' No hay error, limpiar el ErrorProvider y continuar con la lógica del programa
             EP.SetError(txt_descuento, "") ' Limpiar el error
@@ -90,6 +115,17 @@ Public Class frm_facturacion
         ' Si isValid es verdadero, significa que todos los campos son válidos.
         If isValid Then
             ' Continuar con la lógica del programa
+            query = "insert into Facturacion(Fecha_Facturacion, Id_Paciente, Id_Usuario, Sub_Total, ISV, descuento) values(GETDATE(), '" & txt_id_paciente.Text & "', '" & txt_id_empleado.Text & "', '" & txt_precio.Text & "', '" & isv & "', '" & txt_descuento.Text & "')"
+            con.insertar(query)
+            MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txt_examen.Clear()
+            txt_paciente.Clear()
+            txt_precio.Clear()
+            txt_descuento.Clear()
+            txt_id_paciente.Clear()
+            txt_id_empleado.Clear()
+            autonum()
+            cargar()
         Else
             ' Mostrar un mensaje o realizar alguna acción si algún campo no es válido.
         End If
@@ -121,5 +157,6 @@ Public Class frm_facturacion
     ' Función principal
     Private Sub frm_facturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargar()
+        autonum()
     End Sub
 End Class

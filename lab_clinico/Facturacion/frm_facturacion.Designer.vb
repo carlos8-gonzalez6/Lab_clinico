@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_facturacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class frm_facturacion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_frm_facturacion1 = New System.Windows.Forms.Panel()
         Me.lbl_frm_facturacion1 = New System.Windows.Forms.Label()
         Me.btn_frm_facturacion1 = New System.Windows.Forms.Button()
@@ -39,6 +39,9 @@ Partial Class frm_facturacion
         Me.lbl_precio = New System.Windows.Forms.Label()
         Me.lbl_descuento = New System.Windows.Forms.Label()
         Me.EP = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.txt_id_empleado = New System.Windows.Forms.TextBox()
+        Me.txt_id_paciente = New System.Windows.Forms.TextBox()
         Me.pnl_frm_facturacion1.SuspendLayout()
         CType(Me.dg_facturacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_facturacion.SuspendLayout()
@@ -89,23 +92,23 @@ Partial Class frm_facturacion
         Me.dg_facturacion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_facturacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dg_facturacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_facturacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_facturacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dg_facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dg_facturacion.EnableHeadersVisualStyles = False
         Me.dg_facturacion.GridColor = System.Drawing.Color.SteelBlue
-        Me.dg_facturacion.Location = New System.Drawing.Point(17, 47)
+        Me.dg_facturacion.Location = New System.Drawing.Point(12, 47)
         Me.dg_facturacion.Name = "dg_facturacion"
         Me.dg_facturacion.ReadOnly = True
         Me.dg_facturacion.RowHeadersVisible = False
         Me.dg_facturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_facturacion.Size = New System.Drawing.Size(598, 440)
+        Me.dg_facturacion.Size = New System.Drawing.Size(587, 440)
         Me.dg_facturacion.TabIndex = 25
         '
         'gb_facturacion
@@ -122,7 +125,7 @@ Partial Class frm_facturacion
         Me.gb_facturacion.Controls.Add(Me.lbl_descuento)
         Me.gb_facturacion.Location = New System.Drawing.Point(605, 48)
         Me.gb_facturacion.Name = "gb_facturacion"
-        Me.gb_facturacion.Size = New System.Drawing.Size(280, 263)
+        Me.gb_facturacion.Size = New System.Drawing.Size(280, 319)
         Me.gb_facturacion.TabIndex = 26
         Me.gb_facturacion.TabStop = False
         Me.gb_facturacion.Text = "Datos de Facturación"
@@ -218,12 +221,42 @@ Partial Class frm_facturacion
         '
         Me.EP.ContainerControl = Me
         '
+        'txtID
+        '
+        Me.txtID.Enabled = False
+        Me.txtID.Location = New System.Drawing.Point(714, 438)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(100, 20)
+        Me.txtID.TabIndex = 27
+        Me.txtID.Visible = False
+        '
+        'txt_id_empleado
+        '
+        Me.txt_id_empleado.Enabled = False
+        Me.txt_id_empleado.Location = New System.Drawing.Point(605, 464)
+        Me.txt_id_empleado.Name = "txt_id_empleado"
+        Me.txt_id_empleado.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_empleado.TabIndex = 28
+        Me.txt_id_empleado.Visible = False
+        '
+        'txt_id_paciente
+        '
+        Me.txt_id_paciente.Enabled = False
+        Me.txt_id_paciente.Location = New System.Drawing.Point(605, 438)
+        Me.txt_id_paciente.Name = "txt_id_paciente"
+        Me.txt_id_paciente.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_paciente.TabIndex = 29
+        Me.txt_id_paciente.Visible = False
+        '
         'frm_facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(913, 499)
+        Me.Controls.Add(Me.txt_id_paciente)
+        Me.Controls.Add(Me.txt_id_empleado)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.gb_facturacion)
         Me.Controls.Add(Me.dg_facturacion)
         Me.Controls.Add(Me.pnl_frm_facturacion1)
@@ -236,6 +269,7 @@ Partial Class frm_facturacion
         Me.gb_facturacion.PerformLayout()
         CType(Me.EP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -254,4 +288,7 @@ Partial Class frm_facturacion
     Friend WithEvents EP As ErrorProvider
     Friend WithEvents txt_examen As TextBox
     Friend WithEvents btn_buscar As Button
+    Friend WithEvents txtID As TextBox
+    Friend WithEvents txt_id_paciente As TextBox
+    Friend WithEvents txt_id_empleado As TextBox
 End Class
