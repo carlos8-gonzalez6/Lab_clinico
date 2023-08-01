@@ -3,6 +3,7 @@ Public Class frm_categoria
     Dim dv As New DataView
     Dim con As New Conexion
     Dim query As String
+    Dim cond As Integer
 
 
     Public Sub cargar()
@@ -36,5 +37,41 @@ Public Class frm_categoria
 
     Private Sub btn_categoria_Click(sender As Object, e As EventArgs) Handles btn_categoria.Click
         dgv_categoria.Show()
+    End Sub
+
+    Private Sub btnnuevacategoria_Click(sender As Object, e As EventArgs) Handles btnnuevacategoria.Click
+        query = "insert into Analisis(Id_Analisis, Nombre_Analisis)"
+        con.insertar(query)
+        MessageBox.Show("Datos agregados correctamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        txtnombrecategoria.Clear()
+
+        cargar()
+
+    End Sub
+
+    Private Sub btneditarcategoria_Click(sender As Object, e As EventArgs) Handles btneditarcategoria.Click
+        If cond = 1 Then
+            query = "INSERT INTO Categoria(Id_Analisis, Nombre_Analisis) VALUES ('" & txtnombrecategoria.Text & "')"
+            con.insertar(query)
+            MessageBox.Show("Datos agregados correctamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtnombrecategoria.Clear()
+
+        ElseIf cond = 2 Then
+            query = "UPDATE Categoria SET Nombre_Analisis='" & txtnombrecategoria.Text & "')"
+            con.insertar(query)
+            MessageBox.Show("Datos actualizados exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtnombrecategoria.Clear()
+
+        End If
+        cargar()
+        cond = 1
+
+
+    End Sub
+
+    Private Sub dgv_categoria_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_categoria.CellContentClick
+        cond = 2
+        txtnombrecategoria.Text = dgv_categoria.CurrentRow.Cells(0).Value
+
     End Sub
 End Class
