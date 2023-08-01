@@ -4,21 +4,21 @@ Public Class Empleados
     Dim con As New Conexion
     Dim query As String
     Dim dv As New DataView
-    ''Dim cond As Integer
     Dim dr As SqlDataReader
 
 
+    ''Funcion automun: sirve para asignar de forma automatica el id correspindiente a cada empleado, este valor se muestra en el txtid
     Public Sub autonum()
         query = "select Id_Empleado from Empleados"
         If con.val(query) = True Then
             query = "select Max(Id_Empleado) from Empleados"
             dr = con.reader(query)
             While dr.Read
-                TxtId.Text = dr.GetValue(0) + 1
+                txtid.Text = dr.GetValue(0) + 1
             End While
             dr.Close()
         Else
-            TxtId.Text = 1
+            txtid.Text = 1
         End If
     End Sub
 
@@ -31,7 +31,7 @@ Public Class Empleados
                 With dgv_empleados
                     ' opcional: Sin selección múltiple  
                     .MultiSelect = False
-                    ' seleccioanr fila completa al hacer clic en un registro  
+                    ' seleccionar la fila completa al hacer clic en un registro  
                     .SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 End With
 
