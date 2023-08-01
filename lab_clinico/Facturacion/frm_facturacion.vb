@@ -50,6 +50,7 @@ Public Class frm_facturacion
         Dim examenes As New frm_facturacion_examenes()
         ' Mostrar el formulario secundario como una ventana emergente
         If frm_facturacion_examenes.ShowDialog() = DialogResult.OK Then
+            ' El código dentro de esta estructura se ejecuta solo si el formulario secundario es cerrado con DialogResult.OK
             ' Obtener los datos seleccionados en el formulario secundario
             Dim nombreExamen As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Nombre del Examen").Value.ToString()
             Dim id_paciente As String = frm_facturacion_examenes.dgv_facturacion_examenes.SelectedRows(0).Cells("Id_Paciente").Value.ToString()
@@ -67,9 +68,12 @@ Public Class frm_facturacion
     End Sub
 
     Private Sub btn_frm_facturacion1_Click(sender As Object, e As EventArgs) Handles btn_frm_facturacion1.Click
+        ' Convertir el contenido de los TextBox a valores numéricos
         Dim precio As Decimal = Convert.ToDecimal(txt_precio.Text)
         Dim descuento As Decimal = Convert.ToDecimal(txt_descuento.Text)
+        ' Calcular el Impuesto sobre Ventas (ISV) basado en el precio y el descuento
         Dim isv As Decimal = precio - descuento * Convert.ToDecimal(0.15)
+        ' Variable para verificar si todos los campos son válidos
         Dim isValid As Boolean = True
 
         ' Verificar si el campo TextBox está vacío o no es una cadena
@@ -115,9 +119,12 @@ Public Class frm_facturacion
         ' Si isValid es verdadero, significa que todos los campos son válidos.
         If isValid Then
             ' Continuar con la lógica del programa
+            ' Crear la consulta SQL para insertar los datos de facturación en la base de datos
             query = "insert into Facturacion(Fecha_Facturacion, Id_Paciente, Id_Usuario, Sub_Total, ISV, descuento) values(GETDATE(), '" & txt_id_paciente.Text & "', '" & txt_id_empleado.Text & "', '" & txt_precio.Text & "', '" & isv & "', '" & txt_descuento.Text & "')"
             con.insertar(query)
+            ' Mostrar un mensaje indicando que los datos fueron insertados exitosamente
             MessageBox.Show("Datos insertados exitosamente", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Limpiar los campos de entrada
             txt_examen.Clear()
             txt_paciente.Clear()
             txt_precio.Clear()

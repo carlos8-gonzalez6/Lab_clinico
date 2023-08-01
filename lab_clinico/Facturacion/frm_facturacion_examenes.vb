@@ -31,12 +31,15 @@ Public Class frm_facturacion_examenes
         End If
     End Sub
 
+    ' Evento que se activa al hacer clic en el botón "btn_seleccionar_frm_facturacion_examenes"
     Private Sub btn_seleccionar_frm_facturacion_examenes_Click(sender As Object, e As EventArgs) Handles btn_seleccionar_frm_facturacion_examenes.Click
+        ' Comprobamos si se ha seleccionado al menos una fila en el control DataGridView llamado dgv_facturacion_examenes
         If dgv_facturacion_examenes.SelectedRows.Count > 0 Then
             ' Si se seleccionó un registro, cerrar el formulario secundario y devolver DialogResult.OK
             Me.DialogResult = DialogResult.OK
             Me.Close()
         Else
+            ' Si no se seleccionó ninguna fila, mostramos un mensaje de advertencia al usuario
             MessageBox.Show("Por favor, seleccione un examen.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
