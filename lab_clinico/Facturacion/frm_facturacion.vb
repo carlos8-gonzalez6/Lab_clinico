@@ -143,6 +143,18 @@ Public Class frm_facturacion
         Return Not String.IsNullOrEmpty(value)
     End Function
 
+
+    ' Función para verificar si el valor es una cadena no vacía
+    Private Function IsString2(value As String) As Boolean
+        ' Verificar si todos los caracteres son letras
+        For Each c As Char In value
+            If Not Char.IsLetter(c) Then
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
     ' Función para verificar si el valor es un número entero
     Private Function IsInteger(value As String) As Boolean
         Dim result As Integer
