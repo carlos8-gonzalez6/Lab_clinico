@@ -29,7 +29,6 @@ Partial Class Form1
         Me.btnfacturacion = New System.Windows.Forms.Button()
         Me.btnempleados = New System.Windows.Forms.Button()
         Me.btnusuarios = New System.Windows.Forms.Button()
-        Me.btnreportes = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -96,7 +95,7 @@ Partial Class Form1
         Me.btnempleados.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.btnempleados.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnempleados.ForeColor = System.Drawing.Color.White
-        Me.btnempleados.Location = New System.Drawing.Point(27, 204)
+        Me.btnempleados.Location = New System.Drawing.Point(159, 204)
         Me.btnempleados.Name = "btnempleados"
         Me.btnempleados.Size = New System.Drawing.Size(170, 90)
         Me.btnempleados.TabIndex = 4
@@ -108,28 +107,15 @@ Partial Class Form1
         Me.btnusuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.btnusuarios.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnusuarios.ForeColor = System.Drawing.Color.White
-        Me.btnusuarios.Location = New System.Drawing.Point(287, 204)
+        Me.btnusuarios.Location = New System.Drawing.Point(426, 204)
         Me.btnusuarios.Name = "btnusuarios"
         Me.btnusuarios.Size = New System.Drawing.Size(170, 90)
         Me.btnusuarios.TabIndex = 5
         Me.btnusuarios.Text = "Usuarios"
         Me.btnusuarios.UseVisualStyleBackColor = False
         '
-        'btnreportes
-        '
-        Me.btnreportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnreportes.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreportes.ForeColor = System.Drawing.Color.White
-        Me.btnreportes.Location = New System.Drawing.Point(544, 204)
-        Me.btnreportes.Name = "btnreportes"
-        Me.btnreportes.Size = New System.Drawing.Size(170, 90)
-        Me.btnreportes.TabIndex = 6
-        Me.btnreportes.Text = "Reportes"
-        Me.btnreportes.UseVisualStyleBackColor = False
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnreportes)
         Me.GroupBox1.Controls.Add(Me.btnusuarios)
         Me.GroupBox1.Controls.Add(Me.btnempleados)
         Me.GroupBox1.Controls.Add(Me.btnfacturacion)
@@ -165,6 +151,5 @@ Partial Class Form1
     Friend WithEvents btnfacturacion As Button
     Friend WithEvents btnempleados As Button
     Friend WithEvents btnusuarios As Button
-    Friend WithEvents btnreportes As Button
     Friend WithEvents GroupBox1 As GroupBox
 End Class
